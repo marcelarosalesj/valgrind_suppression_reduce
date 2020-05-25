@@ -1,10 +1,12 @@
 import suppression as supp
 
-sf = supp.SuppressionFile("may-05-2020")
+sf = supp.SuppressionFile("supp_files/may-25-2020.supp")
 parser = supp.Parser("supp_files/memcheck_all_errors.supp")
 
 parser.split_into(sf)
 
-print(sf.suppressions[0].name)
-print(sf.suppressions[0].tool)
-print(sf.suppressions[0].array)
+print("SF len is ", sf.len())
+
+sf.save()
+
+print("Finish")

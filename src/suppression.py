@@ -15,6 +15,19 @@ class SuppressionFile:
     def add_suppression(self, supp):
         self.suppressions.append(supp);
 
+    def len(self):
+        return len(self.suppressions)
+
+    def save(self):
+        for sup in self.suppressions:
+            with open(self.name, "a") as myfile:
+                myfile.write("{\n")
+                myfile.write("\t{}\n".format(sup.name))
+                myfile.write("\t{}\n".format(sup.tool))
+                for element in sup.array:
+                    myfile.write("\t{}\n".format(element))
+                myfile.write("}\n")
+
 
 class Parser:
     def __init__(self, ff):
@@ -43,5 +56,5 @@ class Parser:
                               element[1],
                               element[2:])
             sfo.add_suppression(sup)
-
+        return True
 
