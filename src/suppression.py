@@ -49,9 +49,9 @@ class Parser:
         # Store it in the sfo SuppressionFile object
         for element in self.search_results:
             element = element[1:-1]
+            element = element.strip()
             element = re.sub(r'[\s]*:[\s]*',r':', element)
-            element = element.split()
-
+            element = element.split('   ')
             sup = Suppression(element[0],
                               element[1],
                               element[2:])
