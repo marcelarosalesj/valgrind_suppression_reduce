@@ -11,7 +11,7 @@ def main():
 
     sf = supp.SuppressionFile(input_file)
 
-    print("SF len is ", sf.len())
+    print("SF len is ", len(sf))
 
     sf.save("tmp.log")
 

@@ -1,5 +1,6 @@
 import re
 
+
 class Suppression:
     def __init__(self, name, tool, array, string):
         self.name = name
@@ -13,6 +14,17 @@ class Suppression:
         else:
             return False
 
+    def __repr__(self):
+        ret = "{\n"
+        ret += "   {}\n   {}\n".format(self.name, self.tool)
+        for i in self.array:
+            ret += "   {}\n".format(i)
+        ret += "}\n"
+        return ret
+
+    def __str__(self):
+        return self.string
+
     def save_in(self, directory):
         with open(directory, "a") as myfile:
             myfile.write("{\n")
@@ -22,6 +34,19 @@ class Suppression:
                 myfile.write("   {}\n".format(element))
             myfile.write("}\n")
 
+
+
+class SuppressionFileIterator:
+    def __init__(self, sf):
+        self._sf = sf
+        self._index = 0
+
+    def __next__(self):
+        if self._index < len(self._sf.suppressions):
+            result = self._sf.suppressions[self._index]
+            self._index += 1
+            return result
+        raise StopIteration
 
 
 class SuppressionFile:
@@ -66,11 +91,15 @@ class SuppressionFile:
                 return False
         return True
 
+    def __iter__(self):
+        return SuppressionFileIterator(self)
+
+    def __len__(self):
+        return len(self.suppressions)
+
     def add_suppression(self, supp):
         self.suppressions.append(supp);
 
-    def len(self):
-        return len(self.suppressions)
 
     def save(self, dir_to_save):
         for sup in self.suppressions:
