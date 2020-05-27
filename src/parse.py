@@ -1,12 +1,21 @@
 import suppression as supp
+import argparse
 
-sf = supp.SuppressionFile("supp_files/memcheck_all_errors_reduced.supp")
-parser = supp.Parser("supp_files/memcheck_all_errors.supp")
+parser = argparse.ArgumentParser(description='Valgrind suppressions reduce')
+parser.add_argument('-i', '--input_file', required=True, help='provide input supp file')
 
-parser.split_into(sf)
 
-print("SF len is ", sf.len())
+def main():
+    args = parser.parse_args()
+    input_file = args.input_file
 
-sf.save()
+    sf = supp.SuppressionFile(input_file)
 
-print("Finish")
+    print("SF len is ", sf.len())
+
+    sf.save("tmp.log")
+
+    print("Finish")
+
+if __name__ == '__main__':
+    main()
