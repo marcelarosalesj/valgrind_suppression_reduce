@@ -100,6 +100,17 @@ class SuppressionFile:
     def __len__(self):
         return len(self.suppressions)
 
+    def __repr__(self):
+        ret = []
+        for i in self.suppressions:
+            ret.append(i.string)
+        ret.sort()
+        tmp=""
+        for i in ret:
+            tmp+=i
+            tmp+='\n'
+        return tmp
+
     def add_suppression(self, supp):
         self.suppressions.append(supp);
 

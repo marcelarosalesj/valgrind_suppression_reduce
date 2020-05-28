@@ -75,3 +75,88 @@
    fun:execute_command_internal
    ...
 }
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:dl_open_worker
+   ...
+   obj:/usr/lib64/libibverbs.so.1.5.22.1
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   ...
+   obj:/usr/lib64/libmlx4.so.1.0.22.1
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   ...
+   fun:copy_command
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:array_create_element
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   ...
+   fun:array_create
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:calloc
+   fun:btr_context_create
+   fun:dbtree_open_inplace_ex
+   fun:tree_open_create
+   fun:key_tree_prepare
+   fun:key_punch
+   fun:vos_obj_punch
+   fun:puncha_with_flags.isra.7
+   fun:conflicting_rw_exec_one
+   fun:conflicting_rw_exec
+   fun:conflicting_rw
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_mvcc_tests
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:alloc_word_desc
+   fun:make_bare_word
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:add_unwind_protect
+   ...
+}
