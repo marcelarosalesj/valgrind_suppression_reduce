@@ -47,32 +47,8 @@
 {
    <insert_a_suppression_name_here>
    Memcheck:Leak
-   match-leak-kinds:definite
-   fun:malloc
-   fun:vts_alloc_gen_fname
-   fun:io_obj_cache_test
-   obj:/usr/lib64/libcmocka.so.0.7.0
-   fun:_cmocka_run_group_tests
-   fun:run_io_test
-   fun:run_all_tests
-   fun:main
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
    ...
-   fun:malloc
-   fun:do_alloc
-   ...
-   fun:_cmocka_run_group_tests
-   fun:main
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
-   match-leak-kinds:reachable
-   ...
-   fun:execute_command_internal
+   fun:execute_command
    ...
 }
 {
@@ -159,4 +135,615 @@
    fun:xmalloc
    fun:add_unwind_protect
    ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:malloc
+   fun:do_alloc
+   ...
+   fun:protobuf_c_message_unpack
+   fun:expect_drpc_list_cont_resp_with_containers
+   ...
+   fun:_cmocka_run_group_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:User
+   fun:pmemobj_tx_add_snapshot
+   fun:pmemobj_tx_add_common.constprop.20
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:calloc
+   fun:drpc_call
+   fun:request_credentials_via_drpc
+   ...
+   fun:_cmocka_run_group_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   ... 
+   fun:initialize_shell_variables
+   obj:/usr/bin/bash
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:hash_insert
+    ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:calloc
+   ...
+   fun:btr_insert
+   fun:btr_upsert
+   fun:dbtree_update
+   fun:vos_cont_create
+   fun:cont_init
+   fun:dts_ctx_init
+   fun:gc_setup
+   ...
+   fun:run_all_tests
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:make_variable_value
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   fun:init_yy_io
+   fun:pop_stream
+   obj:/usr/bin/bash
+   fun:run_unwind_frame
+    ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:malloc
+   fun:xmalloc
+   fun:make_word_list
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   ...
+   fun:make_*
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/bin/bash
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:xrealloc
+   obj:/usr/bin/bash
+   ...
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:calloc
+   obj:/usr/lib64/librdmacm.so.1.1.22.1
+   obj:/usr/lib64/librdmacm.so.1.1.22.1
+   obj:/usr/lib64/librdmacm.so.1.1.22.1
+   obj:/usr/lib64/librdmacm.so.1.1.22.1
+   fun:rdma_create_id
+   fun:vrb_init_info
+   fun:fi_verbs_ini
+   fun:fi_ini
+   fun:fi_getinfo@@FABRIC_1.3
+   fun:na_ofi_getinfo
+   fun:na_ofi_check_protocol
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:expand_string_assignment
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   fun:execute_command_internal
+   fun:execute_command_internal
+   fun:execute_command_internal
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:phash_insert
+   fun:search_for_command
+   obj:/usr/bin/bash
+   fun:execute_command_internal
+   fun:parse_and_execute
+   fun:command_substitute
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   fun:expand_string_assignment
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:set_lang
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:calloc
+   fun:pool_file_setup
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_pool_test
+   fun:run_all_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:set_default_locale
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:indirect
+   fun:malloc
+   fun:xmalloc
+   obj:/usr/bin/bash
+   fun:yyparse
+   fun:parse_command
+   fun:read_command
+   fun:reader_loop
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   obj:/usr/lib64/librdmacm.so.1.1.22.1
+   obj:/usr/lib64/librdmacm.so.1.1.22.1
+   obj:/usr/lib64/librdmacm.so.1.1.22.1
+   obj:/usr/lib64/librdmacm.so.1.1.22.1
+   fun:rdma_bind_addr
+   fun:vrb_init_info
+   fun:fi_verbs_ini
+   fun:fi_ini
+   fun:fi_getinfo@@FABRIC_1.3
+   fun:na_ofi_getinfo
+   fun:na_ofi_check_protocol
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:command_connect
+   fun:yyparse
+   fun:parse_command
+   fun:read_command
+   fun:reader_loop
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:set_locale_var
+   fun:set_default_lang
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:indirect
+   fun:calloc
+   fun:ent_array_resize
+   fun:ent_array_alloc.isra.33
+   fun:evt_ent_array_fill
+   fun:evt_iter_probe_sorted
+   fun:evt_iter_probe
+   fun:test_evt_overlap_split_internal
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_internal_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:possible
+   fun:calloc
+   fun:lrua_array_alloc
+   fun:vos_ts_table_alloc
+   fun:alloc_ts_cache
+   fun:ts_test_init
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_ts_tests
+   fun:run_all_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:substring
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   fun:expand_string_assignment
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:calloc
+   fun:pack_validate_resp_in_drpc_call_resp_body
+   fun:init_valid_cred
+   fun:init_default_cred
+   fun:test_cont_can_delete
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:possible
+   fun:calloc
+   fun:array_alloc_one
+   fun:lrua_array_alloc
+   fun:vos_ts_table_alloc
+   fun:alloc_ts_cache
+   fun:ts_test_init
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_ts_tests
+   fun:run_all_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:remember_args
+   obj:/usr/bin/bash
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:malloc
+   fun:eq_test_consumer
+   fun:start_thread
+   fun:clone
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:calloc
+   fun:test_evt_iter_flags
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_internal_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:update_export_env_inplace
+   obj:/usr/bin/bash
+   fun:execute_command_internal
+   fun:parse_and_execute
+   fun:command_substitute
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   fun:expand_string_assignment
+   obj:/usr/bin/bash
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:tilde_initialize
+   obj:/usr/bin/bash
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:calloc
+   fun:gc_cont_run
+   fun:gc_cont_test
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_gc_tests
+   fun:run_all_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:fd_to_buffered_stream
+   fun:with_input_from_buffered_stream
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:malloc
+   fun:utest_alloc
+   fun:bio_alloc_init
+   fun:bio_strdup
+   fun:ts_add_rect
+   fun:ts_cmd_run
+   fun:ts_group
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_cmd_line_test
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:calloc
+   fun:generate_view
+   fun:aggregate_basic
+   fun:aggregate_21
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_aggregate_tests
+   fun:run_all_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:calloc
+   fun:evt_tcx_create
+   fun:evt_tcx_clone
+   fun:evt_iter_prepare
+   fun:test_evt_overlap_split_internal
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_internal_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:possible
+   fun:calloc
+   fun:vos_ts_table_alloc
+   fun:alloc_ts_cache
+   fun:ts_test_init
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_ts_tests
+   fun:run_all_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:possible
+   fun:calloc
+   fun:_dl_allocate_tls
+   fun:pthread_create@@GLIBC_2.2.5
+   fun:eq_test_4
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:calloc
+   fun:vea_hint_load
+   fun:ut_interleaved_ops
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:(below main)
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Addr1
+   fun:__strncpy_sse2_unaligned
+   fun:strncpy
+   fun:test_evt_various_data_size_internal
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_internal_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:hash_create
+   fun:phash_create
+   fun:phash_insert
+   fun:search_for_command
+   obj:/usr/bin/bash
+   fun:execute_command_internal
+   fun:parse_and_execute
+   fun:command_substitute
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:calloc
+   fun:register_cb
+   fun:tse_task_register_cbs
+   fun:sched_test_2
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:cmd_init
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:definite
+   fun:malloc
+   fun:vts_alloc_gen_fname
+   fun:io_obj_cache_test
+   obj:/usr/lib64/libcmocka.so.0.7.0
+   fun:_cmocka_run_group_tests
+   fun:run_io_test
+   fun:run_all_tests
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:stop_pipeline
+   fun:execute_command_internal
+   fun:parse_and_execute
+   fun:command_substitute
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   fun:expand_string_assignment
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:hash_create
+   fun:phash_create
+   fun:phash_insert
+   fun:search_for_command
+   obj:/usr/bin/bash
+   fun:execute_command_internal
+   fun:parse_and_execute
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   fun:execute_command_internal
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds:reachable
+   fun:malloc
+   fun:xmalloc
+   fun:delete_job
+   obj:/usr/bin/bash
+   fun:wait_for
+   fun:execute_command_internal
+   fun:parse_and_execute
+   fun:command_substitute
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   obj:/usr/bin/bash
+   fun:expand_string_assignment
 }
