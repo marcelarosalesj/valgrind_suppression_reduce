@@ -52,6 +52,8 @@ valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml
 
 Results: 9 Leak_StillReachable
 ```
+[memcheck xmls](ut_memcheck_results/1-evt-drain-leaks.xml) and [tests logs]((ut_memcheck_results/1-evt-drain-leaks.log)
+
 * 2 - evt internal without pmem
 ```
 LNAME="2-evt-internal-leaks"
@@ -62,6 +64,8 @@ valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml
 Results: 1 InvalidWrite, 4 Leak_DefinitelyLost, 3 Leak_IndirectlyLost, 9 Leak_StillReachable
 
 ```
+[memcheck xmls](ut_memcheck_results/2-evt-internal-leaks.xml) and [test logs](ut_logs/2-evt-internal-leaks.log)
+
 * 3 - evt sequence without pmem
 ```
 LNAME="3-evt-sequence-leaks"
@@ -72,3 +76,4 @@ valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml
 Results: 9 Leak_StillReachable, 1 Leak_DefinitelyLost
 
 ```
+[memcheck xmls](ut_memcheck_results/3-evt-sequence-leaks.xml) and [test logs](ut_logs/3-evt-sequence-leaks.log)
