@@ -52,7 +52,7 @@ valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml
 
 Results: 9 Leak_StillReachable
 ```
-[memcheck xmls](ut_memcheck_results/1-evt-drain-leaks.xml) and [tests logs]((ut_memcheck_results/1-evt-drain-leaks.log)
+[memcheck xmls](ut_memcheck_results/1-evt-drain-leaks.xml) and [tests logs](ut_memcheck_results/1-evt-drain-leaks.log)
 
 * 2 - evt internal without pmem
 ```
