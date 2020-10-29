@@ -6,6 +6,8 @@ To manage this problem, I will follow a divide and conquer approach.
 * The strategy description is [here](#strategy).
 * The execution notes and results are [here](#execution).
 
+Note that we want to solve not only leaks, but various kinds of Valgrind issues.
+
 ## VOS UT framework
 
 VOS UT involves `btree.sh`, `evt_ctl.sh` and `vos_tests`. They run the following testing:
@@ -26,22 +28,21 @@ For fixing VOS memory leaks, I will start by running one by one the VOS test cas
 
 I will start with `evt` and `btree`, then continue with `vos_test` suite (IO first, then the other tests).
 
-## Leaks Priorities
-We will try to fix leaks following this priority order:
+## Priorities
 
-### High Priority
-* `InvalidWrite`
+Note that we care more about fixing leaks on the VOS API than in VOS test cases, although ultimately we want the code free of leaks. We will try to fix issues following this priority order:
+
+### Issues priority order
+* `InvalidWrite` is important to fix this issue in VOS API and in test cases. Writing outside of vallid allocated block can cause stability problems.
 * Invalid Read
 * Uninitialized Reads
 * `Leak_DefinitelyLost`
-
-### Medium Priority
+* `Leak_IndirectlyLost` probably will disappear after fixing `Leak_DefinitelyLost` leak.
 * `Leak_StillReachable` is important, but we can start with the ones above first.
 
-### Other leaks
-* `Leak_IndirectlyLost` probably will disappear after fixing `Leak_DefinitelyLost` leak.
 
 ## Execution
+
 The Valgrind XML results of following commands are in `ut_memcheck_results`, and the logs are in `ut_logs`.
 
 * 1 - evt drain without pmem

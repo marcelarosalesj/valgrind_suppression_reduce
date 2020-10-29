@@ -4,6 +4,22 @@ DAOS Unit testing (UT) begins with `utils/run_test.sh` script. This script execu
 
 ## Commands / Usage
 
+* First, build the project
+```
+# Build for the first time
+git clone https://github.com/daos-stack/daos.git
+cd daos
+git submodule init
+git submodule update
+scons --build-deps=yes install
+
+# Clean then build 
+scons -c && scons --config=force --build-deps=yes TARGET_TYPE=dev install -j32
+
+# Re-build
+scons BUILD_TYPE=debug TARGET_TYPE=dev install -j32
+```
+
 * To run the DAOS Unit Testing and keep Cmocka test results in a specific directory you run this command:
 ```
 CMOCKA_MESSAGE_OUTPUT=xml CMOCKA_XML_FILE=test_results/%g.xml utils/run_test.sh
