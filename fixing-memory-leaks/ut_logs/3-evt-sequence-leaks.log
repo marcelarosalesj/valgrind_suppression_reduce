@@ -1,0 +1,751 @@
+10/29-01:39:57.67 wolf-26 DAOS[69040/69040] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+[==========] Running 1 test(s).
+[ RUN      ] evt tests sequence
+Create evtree with order 4
+Insert 20-24@4.1-INF: val=black expect_pass=true (total in tree=0)
+Insert 90-95@6.1-INF: val=coffee expect_pass=true (total in tree=1)
+Insert 50-56@4.1-INF: val=scarlet expect_pass=true (total in tree=2)
+Insert 57-61@4.1-INF: val=witch expect_pass=true (total in tree=3)
+Insert 57-61@4.1-INF: val=witch expect_pass=true (total in tree=4)
+Insert 96-99@4.1-INF: val=blue expect_pass=true (total in tree=5)
+Insert 78-82@6.1-INF: val=hello expect_pass=true (total in tree=6)
+Insert 25-29@5.1-INF: val=widow expect_pass=true (total in tree=7)
+Insert 10-15@4.1-INF: val=spider expect_pass=true (total in tree=8)
+Insert 35-40@6.1-INF: val=yellow expect_pass=true (total in tree=9)
+Insert 36-41@6.1-INF: val=boggle expect_pass=false (total in tree=10)
+Insert 34-39@6.1-INF: val=dimple expect_pass=false (total in tree=10)
+Insert 34-38@7.1-INF: val=tight expect_pass=true (total in tree=10)
+Insert 0-3@3.1-INF: val=bulk expect_pass=true (total in tree=11)
+Search rectangle 20-30@5.1-INF
+Find rect 20-24 from 20-24@4.1-INF (V) width=5 val=black
+Find rect 25-29 from 25-29@5.1-INF (V) width=5 val=widow
+Search rectangle 28-52@5.1-INF
+Find rect 28-29 from 25-29@5.1-INF (v) width=2 val=ow
+Find rect 50-52 from 50-56@4.1-INF (v) width=3 val=sca
+Search rectangle 20-30@2.1-INF
+Search rectangle 35-40@6.1-INF
+Find rect 35-40 from 35-40@6.1-INF (V) width=6 val=yellow
+Search rectangle 35-40@7.1-INF
+Find rect 35-38 from 34-38@7.1-INF (v) width=4 val=ight
+Find rect 39-40 from 35-40@6.1-INF (v) width=2 val=ow
+Search rectangle 0-100@3.1-INF
+Find rect 0-3 from 0-3@3.1-INF (V) width=4 val=bulk
+Search rectangle 0-100@6.1-INF
+Find rect 0-3 from 0-3@3.1-INF (V) width=4 val=bulk
+Find rect 10-15 from 10-15@4.1-INF (V) width=6 val=spider
+Find rect 20-24 from 20-24@4.1-INF (V) width=5 val=black
+Find rect 25-29 from 25-29@5.1-INF (V) width=5 val=widow
+Find rect 35-40 from 35-40@6.1-INF (V) width=6 val=yellow
+Find rect 50-56 from 50-56@4.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@4.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@6.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@6.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@4.1-INF (V) width=4 val=blue
+Insert 3-28@8.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=12)
+Insert 31-56@1.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=13)
+Search rectangle 0-100@8.1-INF
+Find rect 0-2 from 0-3@3.1-INF (v) width=3 val=bul
+Find rect 3-28 from 3-28@8.1-INF (V) width=26 val=abcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@5.1-INF (v) width=1 val=w
+Find rect 31-33 from 31-56@1.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@7.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@6.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@1.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@4.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@4.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@6.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@6.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@4.1-INF (V) width=4 val=blue
+Delete 0-100@8.1-INF: val=<NULL> expect_pass=false (total in tree=0)
+Insert 20-26@d.1-INF: val=coveted expect_pass=true (total in tree=14)
+Insert 50-54@d.1-INF: val=fight expect_pass=true (total in tree=15)
+Insert 90-95@f.1-INF: val=cookie expect_pass=true (total in tree=16)
+Insert 57-61@d.1-INF: val=hairy expect_pass=true (total in tree=17)
+Insert 96-98@d.1-INF: val=toe expect_pass=true (total in tree=18)
+Insert 78-82@f.1-INF: val=yummy expect_pass=true (total in tree=19)
+Insert 25-29@e.1-INF: val=bagel expect_pass=true (total in tree=20)
+Insert 10-15@d.1-INF: val=trucks expect_pass=true (total in tree=21)
+Insert 34-39@f.1-INF: val=crooks expect_pass=true (total in tree=22)
+Insert 36-41@f.1-INF: val=simple expect_pass=false (total in tree=23)
+Insert 35-40@f.1-INF: val=bakers expect_pass=false (total in tree=23)
+Insert 34-38@10.1-INF: val=motor expect_pass=true (total in tree=23)
+Insert 0-3@c.1-INF: val=cake expect_pass=true (total in tree=24)
+Search rectangle 20-30@e.1-INF
+Find rect 20-24 from 20-26@d.1-INF (v) width=5 val=covet
+Find rect 25-29 from 25-29@e.1-INF (V) width=5 val=bagel
+Search rectangle 28-52@e.1-INF
+Find rect 28-29 from 25-29@e.1-INF (v) width=2 val=el
+Find rect 31-33 from 31-56@1.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@7.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@6.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@1.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-52 from 50-54@d.1-INF (v) width=3 val=fig
+Search rectangle 20-30@b.1-INF
+Find rect 20-28 from 3-28@8.1-INF (v) width=9 val=rstuvwxyz
+Find rect 29-29 from 25-29@5.1-INF (v) width=1 val=w
+Search rectangle 35-40@f.1-INF
+Find rect 35-39 from 34-39@f.1-INF (v) width=5 val=rooks
+Find rect 40-40 from 35-40@6.1-INF (v) width=1 val=w
+Search rectangle 35-40@10.1-INF
+Find rect 35-38 from 34-38@10.1-INF (v) width=4 val=otor
+Find rect 39-39 from 34-39@f.1-INF (v) width=1 val=s
+Find rect 40-40 from 35-40@6.1-INF (v) width=1 val=w
+Search rectangle 0-100@c.1-INF
+Find rect 0-3 from 0-3@c.1-INF (V) width=4 val=cake
+Find rect 4-28 from 3-28@8.1-INF (v) width=25 val=bcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@5.1-INF (v) width=1 val=w
+Find rect 31-33 from 31-56@1.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@7.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@6.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@1.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@4.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@4.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@6.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@6.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@4.1-INF (V) width=4 val=blue
+Search rectangle 0-100@f.1-INF
+Find rect 0-3 from 0-3@c.1-INF (V) width=4 val=cake
+Find rect 4-9 from 3-28@8.1-INF (v) width=6 val=bcdefg
+Find rect 10-15 from 10-15@d.1-INF (V) width=6 val=trucks
+Find rect 16-19 from 3-28@8.1-INF (v) width=4 val=nopq
+Find rect 20-24 from 20-26@d.1-INF (v) width=5 val=covet
+Find rect 25-29 from 25-29@e.1-INF (V) width=5 val=bagel
+Find rect 31-33 from 31-56@1.1-INF (v) width=3 val=abc
+Find rect 34-39 from 34-39@f.1-INF (V) width=6 val=crooks
+Find rect 40-40 from 35-40@6.1-INF (v) width=1 val=w
+Find rect 41-49 from 31-56@1.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-54 from 50-54@d.1-INF (V) width=5 val=fight
+Find rect 55-56 from 50-56@4.1-INF (v) width=2 val=et
+Find rect 57-61 from 57-61@d.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@f.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@f.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@d.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@4.1-INF (v) width=1 val=e
+Insert 3-28@11.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=25)
+Insert 31-56@a.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=26)
+Search rectangle 0-100@11.1-INF
+Find rect 0-2 from 0-3@c.1-INF (v) width=3 val=cak
+Find rect 3-28 from 3-28@11.1-INF (V) width=26 val=abcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@e.1-INF (v) width=1 val=l
+Find rect 31-33 from 31-56@a.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@10.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@f.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@a.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-54 from 50-54@d.1-INF (V) width=5 val=fight
+Find rect 55-56 from 31-56@a.1-INF (v) width=2 val=yz
+Find rect 57-61 from 57-61@d.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@f.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@f.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@d.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@4.1-INF (v) width=1 val=e
+Delete 0-100@11.1-INF: val=<NULL> expect_pass=false (total in tree=0)
+Insert 20-24@16.1-INF: val=black expect_pass=true (total in tree=27)
+Insert 90-95@18.1-INF: val=coffee expect_pass=true (total in tree=28)
+Insert 50-56@16.1-INF: val=scarlet expect_pass=true (total in tree=29)
+Insert 57-61@16.1-INF: val=witch expect_pass=true (total in tree=30)
+Insert 57-61@16.1-INF: val=witch expect_pass=true (total in tree=31)
+Insert 96-99@16.1-INF: val=blue expect_pass=true (total in tree=32)
+Insert 78-82@18.1-INF: val=hello expect_pass=true (total in tree=33)
+Insert 25-29@17.1-INF: val=widow expect_pass=true (total in tree=34)
+Insert 10-15@16.1-INF: val=spider expect_pass=true (total in tree=35)
+Insert 35-40@18.1-INF: val=yellow expect_pass=true (total in tree=36)
+Insert 36-41@18.1-INF: val=boggle expect_pass=false (total in tree=37)
+Insert 34-39@18.1-INF: val=dimple expect_pass=false (total in tree=37)
+Insert 34-38@19.1-INF: val=tight expect_pass=true (total in tree=37)
+Insert 0-3@15.1-INF: val=bulk expect_pass=true (total in tree=38)
+Search rectangle 20-30@17.1-INF
+Find rect 20-24 from 20-24@16.1-INF (V) width=5 val=black
+Find rect 25-29 from 25-29@17.1-INF (V) width=5 val=widow
+Search rectangle 28-52@17.1-INF
+Find rect 28-29 from 25-29@17.1-INF (v) width=2 val=ow
+Find rect 31-33 from 31-56@a.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@10.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@f.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@a.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-52 from 50-56@16.1-INF (v) width=3 val=sca
+Search rectangle 20-30@14.1-INF
+Find rect 20-28 from 3-28@11.1-INF (v) width=9 val=rstuvwxyz
+Find rect 29-29 from 25-29@e.1-INF (v) width=1 val=l
+Search rectangle 35-40@18.1-INF
+Find rect 35-40 from 35-40@18.1-INF (V) width=6 val=yellow
+Search rectangle 35-40@19.1-INF
+Find rect 35-38 from 34-38@19.1-INF (v) width=4 val=ight
+Find rect 39-40 from 35-40@18.1-INF (v) width=2 val=ow
+Search rectangle 0-100@15.1-INF
+Find rect 0-3 from 0-3@15.1-INF (V) width=4 val=bulk
+Find rect 4-28 from 3-28@11.1-INF (v) width=25 val=bcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@e.1-INF (v) width=1 val=l
+Find rect 31-33 from 31-56@a.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@10.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@f.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@a.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-54 from 50-54@d.1-INF (V) width=5 val=fight
+Find rect 55-56 from 31-56@a.1-INF (v) width=2 val=yz
+Find rect 57-61 from 57-61@d.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@f.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@f.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@d.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@4.1-INF (v) width=1 val=e
+Search rectangle 0-100@18.1-INF
+Find rect 0-3 from 0-3@15.1-INF (V) width=4 val=bulk
+Find rect 4-9 from 3-28@11.1-INF (v) width=6 val=bcdefg
+Find rect 10-15 from 10-15@16.1-INF (V) width=6 val=spider
+Find rect 16-19 from 3-28@11.1-INF (v) width=4 val=nopq
+Find rect 20-24 from 20-24@16.1-INF (V) width=5 val=black
+Find rect 25-29 from 25-29@17.1-INF (V) width=5 val=widow
+Find rect 31-33 from 31-56@a.1-INF (v) width=3 val=abc
+Find rect 34-34 from 34-38@10.1-INF (v) width=1 val=m
+Find rect 35-40 from 35-40@18.1-INF (V) width=6 val=yellow
+Find rect 41-49 from 31-56@a.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@16.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@16.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@18.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@18.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@16.1-INF (V) width=4 val=blue
+Insert 3-28@1a.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=39)
+Insert 31-56@13.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=40)
+Search rectangle 0-100@1a.1-INF
+Find rect 0-2 from 0-3@15.1-INF (v) width=3 val=bul
+Find rect 3-28 from 3-28@1a.1-INF (V) width=26 val=abcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@17.1-INF (v) width=1 val=w
+Find rect 31-33 from 31-56@13.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@19.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@18.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@13.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@16.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@16.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@18.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@18.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@16.1-INF (V) width=4 val=blue
+Delete 0-100@1a.1-INF: val=<NULL> expect_pass=false (total in tree=0)
+Insert 20-26@1f.1-INF: val=coveted expect_pass=true (total in tree=41)
+Insert 50-54@1f.1-INF: val=fight expect_pass=true (total in tree=42)
+Insert 90-95@21.1-INF: val=cookie expect_pass=true (total in tree=43)
+Insert 57-61@1f.1-INF: val=hairy expect_pass=true (total in tree=44)
+Insert 96-98@1f.1-INF: val=toe expect_pass=true (total in tree=45)
+Insert 78-82@21.1-INF: val=yummy expect_pass=true (total in tree=46)
+Insert 25-29@20.1-INF: val=bagel expect_pass=true (total in tree=47)
+Insert 10-15@1f.1-INF: val=trucks expect_pass=true (total in tree=48)
+Insert 34-39@21.1-INF: val=crooks expect_pass=true (total in tree=49)
+Insert 36-41@21.1-INF: val=simple expect_pass=false (total in tree=50)
+Insert 35-40@21.1-INF: val=bakers expect_pass=false (total in tree=50)
+Insert 34-38@22.1-INF: val=motor expect_pass=true (total in tree=50)
+Insert 0-3@1e.1-INF: val=cake expect_pass=true (total in tree=51)
+Search rectangle 20-30@20.1-INF
+Find rect 20-24 from 20-26@1f.1-INF (v) width=5 val=covet
+Find rect 25-29 from 25-29@20.1-INF (V) width=5 val=bagel
+Search rectangle 28-52@20.1-INF
+Find rect 28-29 from 25-29@20.1-INF (v) width=2 val=el
+Find rect 31-33 from 31-56@13.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@19.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@18.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@13.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-52 from 50-54@1f.1-INF (v) width=3 val=fig
+Search rectangle 20-30@1d.1-INF
+Find rect 20-28 from 3-28@1a.1-INF (v) width=9 val=rstuvwxyz
+Find rect 29-29 from 25-29@17.1-INF (v) width=1 val=w
+Search rectangle 35-40@21.1-INF
+Find rect 35-39 from 34-39@21.1-INF (v) width=5 val=rooks
+Find rect 40-40 from 35-40@18.1-INF (v) width=1 val=w
+Search rectangle 35-40@22.1-INF
+Find rect 35-38 from 34-38@22.1-INF (v) width=4 val=otor
+Find rect 39-39 from 34-39@21.1-INF (v) width=1 val=s
+Find rect 40-40 from 35-40@18.1-INF (v) width=1 val=w
+Search rectangle 0-100@1e.1-INF
+Find rect 0-3 from 0-3@1e.1-INF (V) width=4 val=cake
+Find rect 4-28 from 3-28@1a.1-INF (v) width=25 val=bcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@17.1-INF (v) width=1 val=w
+Find rect 31-33 from 31-56@13.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@19.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@18.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@13.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@16.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@16.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@18.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@18.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@16.1-INF (V) width=4 val=blue
+Search rectangle 0-100@21.1-INF
+Find rect 0-3 from 0-3@1e.1-INF (V) width=4 val=cake
+Find rect 4-9 from 3-28@1a.1-INF (v) width=6 val=bcdefg
+Find rect 10-15 from 10-15@1f.1-INF (V) width=6 val=trucks
+Find rect 16-19 from 3-28@1a.1-INF (v) width=4 val=nopq
+Find rect 20-24 from 20-26@1f.1-INF (v) width=5 val=covet
+Find rect 25-29 from 25-29@20.1-INF (V) width=5 val=bagel
+Find rect 31-33 from 31-56@13.1-INF (v) width=3 val=abc
+Find rect 34-39 from 34-39@21.1-INF (V) width=6 val=crooks
+Find rect 40-40 from 35-40@18.1-INF (v) width=1 val=w
+Find rect 41-49 from 31-56@13.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-54 from 50-54@1f.1-INF (V) width=5 val=fight
+Find rect 55-56 from 50-56@16.1-INF (v) width=2 val=et
+Find rect 57-61 from 57-61@1f.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@21.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@21.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@1f.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@16.1-INF (v) width=1 val=e
+Insert 3-28@23.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=52)
+Insert 31-56@1c.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=53)
+Search rectangle 0-100@23.1-INF
+Find rect 0-2 from 0-3@1e.1-INF (v) width=3 val=cak
+Find rect 3-28 from 3-28@23.1-INF (V) width=26 val=abcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@20.1-INF (v) width=1 val=l
+Find rect 31-33 from 31-56@1c.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@22.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@21.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@1c.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-54 from 50-54@1f.1-INF (V) width=5 val=fight
+Find rect 55-56 from 31-56@1c.1-INF (v) width=2 val=yz
+Find rect 57-61 from 57-61@1f.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@21.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@21.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@1f.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@16.1-INF (v) width=1 val=e
+Delete 0-100@23.1-INF: val=<NULL> expect_pass=false (total in tree=0)
+Insert 20-24@28.1-INF: val=black expect_pass=true (total in tree=54)
+Insert 90-95@2a.1-INF: val=coffee expect_pass=true (total in tree=55)
+Insert 50-56@28.1-INF: val=scarlet expect_pass=true (total in tree=56)
+Insert 57-61@28.1-INF: val=witch expect_pass=true (total in tree=57)
+Insert 57-61@28.1-INF: val=witch expect_pass=true (total in tree=58)
+Insert 96-99@28.1-INF: val=blue expect_pass=true (total in tree=59)
+Insert 78-82@2a.1-INF: val=hello expect_pass=true (total in tree=60)
+Insert 25-29@29.1-INF: val=widow expect_pass=true (total in tree=61)
+Insert 10-15@28.1-INF: val=spider expect_pass=true (total in tree=62)
+Insert 35-40@2a.1-INF: val=yellow expect_pass=true (total in tree=63)
+Insert 36-41@2a.1-INF: val=boggle expect_pass=false (total in tree=64)
+Insert 34-39@2a.1-INF: val=dimple expect_pass=false (total in tree=64)
+Insert 34-38@2b.1-INF: val=tight expect_pass=true (total in tree=64)
+Insert 0-3@27.1-INF: val=bulk expect_pass=true (total in tree=65)
+Search rectangle 20-30@29.1-INF
+Find rect 20-24 from 20-24@28.1-INF (V) width=5 val=black
+Find rect 25-29 from 25-29@29.1-INF (V) width=5 val=widow
+Search rectangle 28-52@29.1-INF
+Find rect 28-29 from 25-29@29.1-INF (v) width=2 val=ow
+Find rect 31-33 from 31-56@1c.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@22.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@21.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@1c.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-52 from 50-56@28.1-INF (v) width=3 val=sca
+Search rectangle 20-30@26.1-INF
+Find rect 20-28 from 3-28@23.1-INF (v) width=9 val=rstuvwxyz
+Find rect 29-29 from 25-29@20.1-INF (v) width=1 val=l
+Search rectangle 35-40@2a.1-INF
+Find rect 35-40 from 35-40@2a.1-INF (V) width=6 val=yellow
+Search rectangle 35-40@2b.1-INF
+Find rect 35-38 from 34-38@2b.1-INF (v) width=4 val=ight
+Find rect 39-40 from 35-40@2a.1-INF (v) width=2 val=ow
+Search rectangle 0-100@27.1-INF
+Find rect 0-3 from 0-3@27.1-INF (V) width=4 val=bulk
+Find rect 4-28 from 3-28@23.1-INF (v) width=25 val=bcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@20.1-INF (v) width=1 val=l
+Find rect 31-33 from 31-56@1c.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@22.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@21.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@1c.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-54 from 50-54@1f.1-INF (V) width=5 val=fight
+Find rect 55-56 from 31-56@1c.1-INF (v) width=2 val=yz
+Find rect 57-61 from 57-61@1f.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@21.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@21.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@1f.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@16.1-INF (v) width=1 val=e
+Search rectangle 0-100@2a.1-INF
+Find rect 0-3 from 0-3@27.1-INF (V) width=4 val=bulk
+Find rect 4-9 from 3-28@23.1-INF (v) width=6 val=bcdefg
+Find rect 10-15 from 10-15@28.1-INF (V) width=6 val=spider
+Find rect 16-19 from 3-28@23.1-INF (v) width=4 val=nopq
+Find rect 20-24 from 20-24@28.1-INF (V) width=5 val=black
+Find rect 25-29 from 25-29@29.1-INF (V) width=5 val=widow
+Find rect 31-33 from 31-56@1c.1-INF (v) width=3 val=abc
+Find rect 34-34 from 34-38@22.1-INF (v) width=1 val=m
+Find rect 35-40 from 35-40@2a.1-INF (V) width=6 val=yellow
+Find rect 41-49 from 31-56@1c.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@28.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@28.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@2a.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@2a.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@28.1-INF (V) width=4 val=blue
+Insert 3-28@2c.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=66)
+Insert 31-56@25.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=67)
+Search rectangle 0-100@2c.1-INF
+Find rect 0-2 from 0-3@27.1-INF (v) width=3 val=bul
+Find rect 3-28 from 3-28@2c.1-INF (V) width=26 val=abcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@29.1-INF (v) width=1 val=w
+Find rect 31-33 from 31-56@25.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@2b.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@2a.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@25.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@28.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@28.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@2a.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@2a.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@28.1-INF (V) width=4 val=blue
+Delete 0-100@2c.1-INF: val=<NULL> expect_pass=false (total in tree=0)
+Insert 20-26@31.1-INF: val=coveted expect_pass=true (total in tree=68)
+Insert 50-54@31.1-INF: val=fight expect_pass=true (total in tree=69)
+Insert 90-95@33.1-INF: val=cookie expect_pass=true (total in tree=70)
+Insert 57-61@31.1-INF: val=hairy expect_pass=true (total in tree=71)
+Insert 96-98@31.1-INF: val=toe expect_pass=true (total in tree=72)
+Insert 78-82@33.1-INF: val=yummy expect_pass=true (total in tree=73)
+Insert 25-29@32.1-INF: val=bagel expect_pass=true (total in tree=74)
+Insert 10-15@31.1-INF: val=trucks expect_pass=true (total in tree=75)
+Insert 34-39@33.1-INF: val=crooks expect_pass=true (total in tree=76)
+Insert 36-41@33.1-INF: val=simple expect_pass=false (total in tree=77)
+Insert 35-40@33.1-INF: val=bakers expect_pass=false (total in tree=77)
+Insert 34-38@34.1-INF: val=motor expect_pass=true (total in tree=77)
+Insert 0-3@30.1-INF: val=cake expect_pass=true (total in tree=78)
+Search rectangle 20-30@32.1-INF
+Find rect 20-24 from 20-26@31.1-INF (v) width=5 val=covet
+Find rect 25-29 from 25-29@32.1-INF (V) width=5 val=bagel
+Search rectangle 28-52@32.1-INF
+Find rect 28-29 from 25-29@32.1-INF (v) width=2 val=el
+Find rect 31-33 from 31-56@25.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@2b.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@2a.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@25.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-52 from 50-54@31.1-INF (v) width=3 val=fig
+Search rectangle 20-30@2f.1-INF
+Find rect 20-28 from 3-28@2c.1-INF (v) width=9 val=rstuvwxyz
+Find rect 29-29 from 25-29@29.1-INF (v) width=1 val=w
+Search rectangle 35-40@33.1-INF
+Find rect 35-39 from 34-39@33.1-INF (v) width=5 val=rooks
+Find rect 40-40 from 35-40@2a.1-INF (v) width=1 val=w
+Search rectangle 35-40@34.1-INF
+Find rect 35-38 from 34-38@34.1-INF (v) width=4 val=otor
+Find rect 39-39 from 34-39@33.1-INF (v) width=1 val=s
+Find rect 40-40 from 35-40@2a.1-INF (v) width=1 val=w
+Search rectangle 0-100@30.1-INF
+Find rect 0-3 from 0-3@30.1-INF (V) width=4 val=cake
+Find rect 4-28 from 3-28@2c.1-INF (v) width=25 val=bcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@29.1-INF (v) width=1 val=w
+Find rect 31-33 from 31-56@25.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@2b.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@2a.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@25.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@28.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@28.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@2a.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@2a.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@28.1-INF (V) width=4 val=blue
+Search rectangle 0-100@33.1-INF
+Find rect 0-3 from 0-3@30.1-INF (V) width=4 val=cake
+Find rect 4-9 from 3-28@2c.1-INF (v) width=6 val=bcdefg
+Find rect 10-15 from 10-15@31.1-INF (V) width=6 val=trucks
+Find rect 16-19 from 3-28@2c.1-INF (v) width=4 val=nopq
+Find rect 20-24 from 20-26@31.1-INF (v) width=5 val=covet
+Find rect 25-29 from 25-29@32.1-INF (V) width=5 val=bagel
+Find rect 31-33 from 31-56@25.1-INF (v) width=3 val=abc
+Find rect 34-39 from 34-39@33.1-INF (V) width=6 val=crooks
+Find rect 40-40 from 35-40@2a.1-INF (v) width=1 val=w
+Find rect 41-49 from 31-56@25.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-54 from 50-54@31.1-INF (V) width=5 val=fight
+Find rect 55-56 from 50-56@28.1-INF (v) width=2 val=et
+Find rect 57-61 from 57-61@31.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@33.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@33.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@31.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@28.1-INF (v) width=1 val=e
+Insert 3-28@35.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=79)
+Insert 31-56@2e.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=80)
+Search rectangle 0-100@35.1-INF
+Find rect 0-2 from 0-3@30.1-INF (v) width=3 val=cak
+Find rect 3-28 from 3-28@35.1-INF (V) width=26 val=abcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@32.1-INF (v) width=1 val=l
+Find rect 31-33 from 31-56@2e.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@34.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@33.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@2e.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-54 from 50-54@31.1-INF (V) width=5 val=fight
+Find rect 55-56 from 31-56@2e.1-INF (v) width=2 val=yz
+Find rect 57-61 from 57-61@31.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@33.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@33.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@31.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@28.1-INF (v) width=1 val=e
+Delete 0-100@35.1-INF: val=<NULL> expect_pass=false (total in tree=0)
+Insert 20-24@3a.1-INF: val=black expect_pass=true (total in tree=81)
+Insert 90-95@3c.1-INF: val=coffee expect_pass=true (total in tree=82)
+Insert 50-56@3a.1-INF: val=scarlet expect_pass=true (total in tree=83)
+Insert 57-61@3a.1-INF: val=witch expect_pass=true (total in tree=84)
+Insert 57-61@3a.1-INF: val=witch expect_pass=true (total in tree=85)
+Insert 96-99@3a.1-INF: val=blue expect_pass=true (total in tree=86)
+Insert 78-82@3c.1-INF: val=hello expect_pass=true (total in tree=87)
+Insert 25-29@3b.1-INF: val=widow expect_pass=true (total in tree=88)
+Insert 10-15@3a.1-INF: val=spider expect_pass=true (total in tree=89)
+Insert 35-40@3c.1-INF: val=yellow expect_pass=true (total in tree=90)
+Insert 36-41@3c.1-INF: val=boggle expect_pass=false (total in tree=91)
+Insert 34-39@3c.1-INF: val=dimple expect_pass=false (total in tree=91)
+Insert 34-38@3d.1-INF: val=tight expect_pass=true (total in tree=91)
+Insert 0-3@39.1-INF: val=bulk expect_pass=true (total in tree=92)
+Search rectangle 20-30@3b.1-INF
+Find rect 20-24 from 20-24@3a.1-INF (V) width=5 val=black
+Find rect 25-29 from 25-29@3b.1-INF (V) width=5 val=widow
+Search rectangle 28-52@3b.1-INF
+Find rect 28-29 from 25-29@3b.1-INF (v) width=2 val=ow
+Find rect 31-33 from 31-56@2e.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@34.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@33.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@2e.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-52 from 50-56@3a.1-INF (v) width=3 val=sca
+Search rectangle 20-30@38.1-INF
+Find rect 20-28 from 3-28@35.1-INF (v) width=9 val=rstuvwxyz
+Find rect 29-29 from 25-29@32.1-INF (v) width=1 val=l
+Search rectangle 35-40@3c.1-INF
+Find rect 35-40 from 35-40@3c.1-INF (V) width=6 val=yellow
+Search rectangle 35-40@3d.1-INF
+Find rect 35-38 from 34-38@3d.1-INF (v) width=4 val=ight
+Find rect 39-40 from 35-40@3c.1-INF (v) width=2 val=ow
+Search rectangle 0-100@39.1-INF
+Find rect 0-3 from 0-3@39.1-INF (V) width=4 val=bulk
+Find rect 4-28 from 3-28@35.1-INF (v) width=25 val=bcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@32.1-INF (v) width=1 val=l
+Find rect 31-33 from 31-56@2e.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@34.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@33.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@2e.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-54 from 50-54@31.1-INF (V) width=5 val=fight
+Find rect 55-56 from 31-56@2e.1-INF (v) width=2 val=yz
+Find rect 57-61 from 57-61@31.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@33.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@33.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@31.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@28.1-INF (v) width=1 val=e
+Search rectangle 0-100@3c.1-INF
+Find rect 0-3 from 0-3@39.1-INF (V) width=4 val=bulk
+Find rect 4-9 from 3-28@35.1-INF (v) width=6 val=bcdefg
+Find rect 10-15 from 10-15@3a.1-INF (V) width=6 val=spider
+Find rect 16-19 from 3-28@35.1-INF (v) width=4 val=nopq
+Find rect 20-24 from 20-24@3a.1-INF (V) width=5 val=black
+Find rect 25-29 from 25-29@3b.1-INF (V) width=5 val=widow
+Find rect 31-33 from 31-56@2e.1-INF (v) width=3 val=abc
+Find rect 34-34 from 34-38@34.1-INF (v) width=1 val=m
+Find rect 35-40 from 35-40@3c.1-INF (V) width=6 val=yellow
+Find rect 41-49 from 31-56@2e.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@3a.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@3a.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@3c.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@3c.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@3a.1-INF (V) width=4 val=blue
+Insert 3-28@3e.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=93)
+Insert 31-56@37.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=94)
+Search rectangle 0-100@3e.1-INF
+Find rect 0-2 from 0-3@39.1-INF (v) width=3 val=bul
+Find rect 3-28 from 3-28@3e.1-INF (V) width=26 val=abcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@3b.1-INF (v) width=1 val=w
+Find rect 31-33 from 31-56@37.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@3d.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@3c.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@37.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@3a.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@3a.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@3c.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@3c.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@3a.1-INF (V) width=4 val=blue
+Delete 0-100@3e.1-INF: val=<NULL> expect_pass=false (total in tree=0)
+Insert 20-26@43.1-INF: val=coveted expect_pass=true (total in tree=95)
+Insert 50-54@43.1-INF: val=fight expect_pass=true (total in tree=96)
+Insert 90-95@45.1-INF: val=cookie expect_pass=true (total in tree=97)
+Insert 57-61@43.1-INF: val=hairy expect_pass=true (total in tree=98)
+Insert 96-98@43.1-INF: val=toe expect_pass=true (total in tree=99)
+Insert 78-82@45.1-INF: val=yummy expect_pass=true (total in tree=100)
+Insert 25-29@44.1-INF: val=bagel expect_pass=true (total in tree=101)
+Insert 10-15@43.1-INF: val=trucks expect_pass=true (total in tree=102)
+Insert 34-39@45.1-INF: val=crooks expect_pass=true (total in tree=103)
+Insert 36-41@45.1-INF: val=simple expect_pass=false (total in tree=104)
+Insert 35-40@45.1-INF: val=bakers expect_pass=false (total in tree=104)
+Insert 34-38@46.1-INF: val=motor expect_pass=true (total in tree=104)
+Insert 0-3@42.1-INF: val=cake expect_pass=true (total in tree=105)
+Search rectangle 20-30@44.1-INF
+Find rect 20-24 from 20-26@43.1-INF (v) width=5 val=covet
+Find rect 25-29 from 25-29@44.1-INF (V) width=5 val=bagel
+Search rectangle 28-52@44.1-INF
+Find rect 28-29 from 25-29@44.1-INF (v) width=2 val=el
+Find rect 31-33 from 31-56@37.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@3d.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@3c.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@37.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-52 from 50-54@43.1-INF (v) width=3 val=fig
+Search rectangle 20-30@41.1-INF
+Find rect 20-28 from 3-28@3e.1-INF (v) width=9 val=rstuvwxyz
+Find rect 29-29 from 25-29@3b.1-INF (v) width=1 val=w
+Search rectangle 35-40@45.1-INF
+Find rect 35-39 from 34-39@45.1-INF (v) width=5 val=rooks
+Find rect 40-40 from 35-40@3c.1-INF (v) width=1 val=w
+Search rectangle 35-40@46.1-INF
+Find rect 35-38 from 34-38@46.1-INF (v) width=4 val=otor
+Find rect 39-39 from 34-39@45.1-INF (v) width=1 val=s
+Find rect 40-40 from 35-40@3c.1-INF (v) width=1 val=w
+Search rectangle 0-100@42.1-INF
+Find rect 0-3 from 0-3@42.1-INF (V) width=4 val=cake
+Find rect 4-28 from 3-28@3e.1-INF (v) width=25 val=bcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@3b.1-INF (v) width=1 val=w
+Find rect 31-33 from 31-56@37.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@3d.1-INF (V) width=5 val=tight
+Find rect 39-40 from 35-40@3c.1-INF (v) width=2 val=ow
+Find rect 41-49 from 31-56@37.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@3a.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@3a.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@3c.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@3c.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@3a.1-INF (V) width=4 val=blue
+Search rectangle 0-100@45.1-INF
+Find rect 0-3 from 0-3@42.1-INF (V) width=4 val=cake
+Find rect 4-9 from 3-28@3e.1-INF (v) width=6 val=bcdefg
+Find rect 10-15 from 10-15@43.1-INF (V) width=6 val=trucks
+Find rect 16-19 from 3-28@3e.1-INF (v) width=4 val=nopq
+Find rect 20-24 from 20-26@43.1-INF (v) width=5 val=covet
+Find rect 25-29 from 25-29@44.1-INF (V) width=5 val=bagel
+Find rect 31-33 from 31-56@37.1-INF (v) width=3 val=abc
+Find rect 34-39 from 34-39@45.1-INF (V) width=6 val=crooks
+Find rect 40-40 from 35-40@3c.1-INF (v) width=1 val=w
+Find rect 41-49 from 31-56@37.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-54 from 50-54@43.1-INF (V) width=5 val=fight
+Find rect 55-56 from 50-56@3a.1-INF (v) width=2 val=et
+Find rect 57-61 from 57-61@43.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@45.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@45.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@43.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@3a.1-INF (v) width=1 val=e
+Insert 3-28@47.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=106)
+Insert 31-56@40.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=107)
+Search rectangle 0-100@47.1-INF
+Find rect 0-2 from 0-3@42.1-INF (v) width=3 val=cak
+Find rect 3-28 from 3-28@47.1-INF (V) width=26 val=abcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@44.1-INF (v) width=1 val=l
+Find rect 31-33 from 31-56@40.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@46.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@45.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@40.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-54 from 50-54@43.1-INF (V) width=5 val=fight
+Find rect 55-56 from 31-56@40.1-INF (v) width=2 val=yz
+Find rect 57-61 from 57-61@43.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@45.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@45.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@43.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@3a.1-INF (v) width=1 val=e
+Delete 0-100@47.1-INF: val=<NULL> expect_pass=false (total in tree=0)
+Insert 20-24@4c.1-INF: val=black expect_pass=true (total in tree=108)
+Insert 90-95@4e.1-INF: val=coffee expect_pass=true (total in tree=109)
+Insert 50-56@4c.1-INF: val=scarlet expect_pass=true (total in tree=110)
+Insert 57-61@4c.1-INF: val=witch expect_pass=true (total in tree=111)
+Insert 57-61@4c.1-INF: val=witch expect_pass=true (total in tree=112)
+Insert 96-99@4c.1-INF: val=blue expect_pass=true (total in tree=113)
+Insert 78-82@4e.1-INF: val=hello expect_pass=true (total in tree=114)
+Insert 25-29@4d.1-INF: val=widow expect_pass=true (total in tree=115)
+Insert 10-15@4c.1-INF: val=spider expect_pass=true (total in tree=116)
+Insert 35-40@4e.1-INF: val=yellow expect_pass=true (total in tree=117)
+Insert 36-41@4e.1-INF: val=boggle expect_pass=false (total in tree=118)
+Insert 34-39@4e.1-INF: val=dimple expect_pass=false (total in tree=118)
+Insert 34-38@4f.1-INF: val=tight expect_pass=true (total in tree=118)
+Insert 0-3@4b.1-INF: val=bulk expect_pass=true (total in tree=119)
+Search rectangle 20-30@4d.1-INF
+Find rect 20-24 from 20-24@4c.1-INF (V) width=5 val=black
+Find rect 25-29 from 25-29@4d.1-INF (V) width=5 val=widow
+Search rectangle 28-52@4d.1-INF
+Find rect 28-29 from 25-29@4d.1-INF (v) width=2 val=ow
+Find rect 31-33 from 31-56@40.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@46.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@45.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@40.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-52 from 50-56@4c.1-INF (v) width=3 val=sca
+Search rectangle 20-30@4a.1-INF
+Find rect 20-28 from 3-28@47.1-INF (v) width=9 val=rstuvwxyz
+Find rect 29-29 from 25-29@44.1-INF (v) width=1 val=l
+Search rectangle 35-40@4e.1-INF
+Find rect 35-40 from 35-40@4e.1-INF (V) width=6 val=yellow
+Search rectangle 35-40@4f.1-INF
+Find rect 35-38 from 34-38@4f.1-INF (v) width=4 val=ight
+Find rect 39-40 from 35-40@4e.1-INF (v) width=2 val=ow
+Search rectangle 0-100@4b.1-INF
+Find rect 0-3 from 0-3@4b.1-INF (V) width=4 val=bulk
+Find rect 4-28 from 3-28@47.1-INF (v) width=25 val=bcdefghijklmnopqrstuvwxyz
+Find rect 29-29 from 25-29@44.1-INF (v) width=1 val=l
+Find rect 31-33 from 31-56@40.1-INF (v) width=3 val=abc
+Find rect 34-38 from 34-38@46.1-INF (V) width=5 val=motor
+Find rect 39-39 from 34-39@45.1-INF (v) width=1 val=s
+Find rect 40-49 from 31-56@40.1-INF (v) width=10 val=jklmnopqrs
+Find rect 50-54 from 50-54@43.1-INF (V) width=5 val=fight
+Find rect 55-56 from 31-56@40.1-INF (v) width=2 val=yz
+Find rect 57-61 from 57-61@43.1-INF (V) width=5 val=hairy
+Find rect 78-82 from 78-82@45.1-INF (V) width=5 val=yummy
+Find rect 90-95 from 90-95@45.1-INF (V) width=6 val=cookie
+Find rect 96-98 from 96-98@43.1-INF (V) width=3 val=toe
+Find rect 99-99 from 96-99@3a.1-INF (v) width=1 val=e
+Search rectangle 0-100@4e.1-INF
+Find rect 0-3 from 0-3@4b.1-INF (V) width=4 val=bulk
+Find rect 4-9 from 3-28@47.1-INF (v) width=6 val=bcdefg
+Find rect 10-15 from 10-15@4c.1-INF (V) width=6 val=spider
+Find rect 16-19 from 3-28@47.1-INF (v) width=4 val=nopq
+Find rect 20-24 from 20-24@4c.1-INF (V) width=5 val=black
+Find rect 25-29 from 25-29@4d.1-INF (V) width=5 val=widow
+Find rect 31-33 from 31-56@40.1-INF (v) width=3 val=abc
+Find rect 34-34 from 34-38@46.1-INF (v) width=1 val=m
+Find rect 35-40 from 35-40@4e.1-INF (V) width=6 val=yellow
+Find rect 41-49 from 31-56@40.1-INF (v) width=9 val=klmnopqrs
+Find rect 50-56 from 50-56@4c.1-INF (V) width=7 val=scarlet
+Find rect 57-61 from 57-61@4c.1-INF (V) width=5 val=witch
+Find rect 78-82 from 78-82@4e.1-INF (V) width=5 val=hello
+Find rect 90-95 from 90-95@4e.1-INF (V) width=6 val=coffee
+Find rect 96-99 from 96-99@4c.1-INF (V) width=4 val=blue
+Insert 3-28@50.1-INF: val=abcdefghijklmnopqrstuvwxyz expect_pass=true (total in tree=120)
+Insert 31-56@48.1-INF: val=<NULL> expect_pass=true (total in tree=121)
+Destroy evtree
+Create evtree with order 4
+Insert 0-1@1.1-INF: val=ab expect_pass=true (total in tree=122)
+Insert 2-3@1.1-INF: val=ab expect_pass=true (total in tree=123)
+Insert 4-5@1.1-INF: val=ab expect_pass=true (total in tree=124)
+Insert 6-7@1.1-INF: val=ab expect_pass=true (total in tree=125)
+Insert 9223372036854775808-9223372036854775809@1.1-INF: val=ab expect_pass=true (total in tree=126)
+Tree depth=2, order=4, feats=2
+node=e1f0560, lvl=0, mbr=0-9223372036854775809@1.1, rect_nr=2
+    node=e1f0420, lvl=1, mbr=2-7@1.1, rect_nr=3
+        rect[0] = 2-3@1.1-INF
+        rect[1] = 4-5@1.1-INF
+        rect[2] = 6-7@1.1-INF
+    node=e1f0080, lvl=1, mbr=0-9223372036854775809@1.1, rect_nr=2
+        rect[0] = 0-1@1.1-INF
+        rect[1] = 9223372036854775808-9223372036854775809@1.1-INF
+Destroy evtree
+Create evtree with order 5
+Insert 0-1@1.1-INF: val=ab expect_pass=true (total in tree=127)
+Insert 1-2@2.1-INF: val=cd expect_pass=true (total in tree=128)
+Insert 3-4@3.1-INF: val=bc expect_pass=true (total in tree=129)
+Insert 5-7@4.1-INF: val=def expect_pass=true (total in tree=130)
+Insert 6-8@5.1-INF: val=xyz expect_pass=true (total in tree=131)
+Insert 1-2@6.1-INF: val=aa expect_pass=true (total in tree=132)
+Insert 4-7@7.1-INF: val=abcd expect_pass=true (total in tree=133)
+Tree depth=2, order=5, feats=2
+node=e1f17b0, lvl=0, mbr=0-8@1.1, rect_nr=2
+    node=e1f11e0, lvl=1, mbr=0-2@1.1, rect_nr=3
+        rect[0] = 0-1@1.1-INF
+        rect[1] = 1-2@6.1-INF
+        rect[2] = 1-2@2.1-INF
+    node=e1f1650, lvl=1, mbr=3-8@3.1, rect_nr=4
+        rect[0] = 3-4@3.1-INF
+        rect[1] = 4-7@7.1-INF
+        rect[2] = 5-7@4.1-INF
+        rect[3] = 6-8@5.1-INF
+Remove all 0-5@8.1-INF expect_pass=false
+10/29-01:39:58.11 wolf-26 DAOS[69040/69040] vos  ERR  src/vos/evtree.c:3288 evt_remove_all() Removing partial extents not allowed: Specified rect 0-5@8.65535-INF overlaps 4-7
+Tree depth=2, order=5, feats=2
+node=e1f17b0, lvl=0, mbr=0-8@1.1, rect_nr=2
+    node=e1f11e0, lvl=1, mbr=0-2@1.1, rect_nr=3
+        rect[0] = 0-1@1.1-INF
+        rect[1] = 1-2@6.1-INF
+        rect[2] = 1-2@2.1-INF
+    node=e1f1650, lvl=1, mbr=3-8@3.1, rect_nr=4
+        rect[0] = 3-4@3.1-INF
+        rect[1] = 4-7@7.1-INF
+        rect[2] = 5-7@4.1-INF
+        rect[3] = 6-8@5.1-INF
+Remove all 0-5@3.1-INF expect_pass=true
+Tree depth=2, order=5, feats=2
+node=e1f17b0, lvl=0, mbr=1-8@4.1, rect_nr=2
+    node=e1f11e0, lvl=1, mbr=1-2@6.1, rect_nr=1
+        rect[0] = 1-2@6.1-INF
+    node=e1f1650, lvl=1, mbr=4-8@4.1, rect_nr=3
+        rect[0] = 4-7@7.1-INF
+        rect[1] = 5-7@4.1-INF
+        rect[2] = 6-8@5.1-INF
+Destroy evtree
+[       OK ] evt tests sequence
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).

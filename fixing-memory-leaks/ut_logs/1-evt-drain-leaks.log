@@ -1,0 +1,19 @@
+10/29-00:43:52.94 wolf-26 DAOS[55998/55998] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+[==========] Running 1 test(s).
+[ RUN      ] evtree drain tests
+Create evtree with order 4
+drained 256 of 2379
+drained 256 of 2379
+drained 256 of 2379
+drained 256 of 2379
+drained 256 of 2379
+drained 256 of 2379
+drained 256 of 2379
+drained 256 of 2379
+drained 256 of 2379
+drained 75 of 2379
+tree is empty
+Close evtree
+[       OK ] evtree drain tests
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).

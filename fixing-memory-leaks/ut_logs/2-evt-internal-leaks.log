@@ -1,0 +1,276 @@
+10/29-01:07:38.04 wolf-26 DAOS[15871/15871] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+[==========] Running 11 test(s).
+[ RUN      ] EVT050: evt_iter_delete
+[       OK ] EVT050: evt_iter_delete
+[ RUN      ] EVT051: evt_iter_delete_internal
+[       OK ] EVT051: evt_iter_delete_internal
+[ RUN      ] EVT052: evt_ent_alloc_bug
+Number of entries is 872
+[       OK ] EVT052: evt_ent_alloc_bug
+[ RUN      ] EVT053: evt_root_deactivate_bug
+[       OK ] EVT053: evt_root_deactivate_bug
+[ RUN      ] EVT054: evt_iter_flags
+Hole inserted 21 epoch.
+EVT_ITER_SKIP_HOLES (VISIBLE)
+Compare Expected/Actual Result
+RC: DER_SUCCESS(0): 'Success'
+EVT_ITER_REVERSE (SKIP_HOLES and VISIBLE)
+Compare Expected/Actual Result
+RC: DER_SUCCESS(0): 'Success'
+EVT_ITER_VISIBLE
+Compare Expected/Actual Result
+RC: DER_SUCCESS(0): 'Success'
+EVT_ITER_REVERSE (VISIBLE)
+Compare Expected/Actual Result
+RC: DER_SUCCESS(0): 'Success'
+EVT_ITER_COVERED
+Compare Expected/Actual Result
+RC: DER_SUCCESS(0): 'Success'
+EVT_ITER_REVERSE (COVERED)
+Compare Expected/Actual Result
+RC: DER_SUCCESS(0): 'Success'
+EVT_ITER_VISIBLE (COVERED)
+Compare Expected/Actual Result
+RC: DER_SUCCESS(0): 'Success'
+EVT_ITER_REVERSE (VISIBLE and COVERED)
+Compare Expected/Actual Result
+RC: DER_SUCCESS(0): 'Success'
+EVT_ITER_EMBEDDED
+Compare Expected/Actual Result
+RC: DER_SUCCESS(0): 'Success'
+[       OK ] EVT054: evt_iter_flags
+[ RUN      ] EVT055: evt_find_internal
+Hole inserted 10 epoch.
+Find rect 99-99 from 99-108@63.0-INF (v) width=1 val=d
+Find rect 100-109 from 100-109@64.0-INF (V) width=10 val=deadbeef
+Find rect 98-98 from 98-107@62.0-INF (v) width=1 val=d
+Find rect 99-108 from 99-108@63.0-INF (V) width=10 val=deadbeef
+Find rect 97-97 from 97-106@61.0-INF (v) width=1 val=d
+Find rect 98-107 from 98-107@62.0-INF (V) width=10 val=deadbeef
+Find rect 96-96 from 96-105@60.0-INF (v) width=1 val=d
+Find rect 97-106 from 97-106@61.0-INF (V) width=10 val=deadbeef
+Find rect 95-95 from 95-104@5f.0-INF (v) width=1 val=d
+Find rect 96-105 from 96-105@60.0-INF (V) width=10 val=deadbeef
+Find rect 94-94 from 94-103@5e.0-INF (v) width=1 val=d
+Find rect 95-104 from 95-104@5f.0-INF (V) width=10 val=deadbeef
+Find rect 93-93 from 93-102@5d.0-INF (v) width=1 val=d
+Find rect 94-103 from 94-103@5e.0-INF (V) width=10 val=deadbeef
+Find rect 92-92 from 92-101@5c.0-INF (v) width=1 val=d
+Find rect 93-102 from 93-102@5d.0-INF (V) width=10 val=deadbeef
+Find rect 91-91 from 91-100@5b.0-INF (v) width=1 val=d
+Find rect 92-101 from 92-101@5c.0-INF (V) width=10 val=deadbeef
+Find rect 90-90 from 90-99@5a.0-INF (v) width=1 val=d
+Find rect 91-100 from 91-100@5b.0-INF (V) width=10 val=deadbeef
+Find rect 89-89 from 89-98@59.0-INF (v) width=1 val=d
+Find rect 90-99 from 90-99@5a.0-INF (V) width=10 val=deadbeef
+Find rect 88-88 from 88-97@58.0-INF (v) width=1 val=d
+Find rect 89-98 from 89-98@59.0-INF (V) width=10 val=deadbeef
+Find rect 87-87 from 87-96@57.0-INF (v) width=1 val=d
+Find rect 88-97 from 88-97@58.0-INF (V) width=10 val=deadbeef
+Find rect 86-86 from 86-95@56.0-INF (v) width=1 val=d
+Find rect 87-96 from 87-96@57.0-INF (V) width=10 val=deadbeef
+Find rect 85-85 from 85-94@55.0-INF (v) width=1 val=d
+Find rect 86-95 from 86-95@56.0-INF (V) width=10 val=deadbeef
+Find rect 84-84 from 84-93@54.0-INF (v) width=1 val=d
+Find rect 85-94 from 85-94@55.0-INF (V) width=10 val=deadbeef
+Find rect 83-83 from 83-92@53.0-INF (v) width=1 val=d
+Find rect 84-93 from 84-93@54.0-INF (V) width=10 val=deadbeef
+Find rect 82-82 from 82-91@52.0-INF (v) width=1 val=d
+Find rect 83-92 from 83-92@53.0-INF (V) width=10 val=deadbeef
+Find rect 81-81 from 81-90@51.0-INF (v) width=1 val=d
+Find rect 82-91 from 82-91@52.0-INF (V) width=10 val=deadbeef
+Find rect 80-80 from 80-89@50.0-INF (v) width=1 val=d
+Find rect 81-90 from 81-90@51.0-INF (V) width=10 val=deadbeef
+Find rect 79-79 from 79-88@4f.0-INF (v) width=1 val=d
+Find rect 80-89 from 80-89@50.0-INF (V) width=10 val=deadbeef
+Find rect 78-78 from 78-87@4e.0-INF (v) width=1 val=d
+Find rect 79-88 from 79-88@4f.0-INF (V) width=10 val=deadbeef
+Find rect 77-77 from 77-86@4d.0-INF (v) width=1 val=d
+Find rect 78-87 from 78-87@4e.0-INF (V) width=10 val=deadbeef
+Find rect 76-76 from 76-85@4c.0-INF (v) width=1 val=d
+Find rect 77-86 from 77-86@4d.0-INF (V) width=10 val=deadbeef
+Find rect 75-75 from 75-84@4b.0-INF (v) width=1 val=d
+Find rect 76-85 from 76-85@4c.0-INF (V) width=10 val=deadbeef
+Find rect 74-74 from 74-83@4a.0-INF (v) width=1 val=d
+Find rect 75-84 from 75-84@4b.0-INF (V) width=10 val=deadbeef
+Find rect 73-73 from 73-82@49.0-INF (v) width=1 val=d
+Find rect 74-83 from 74-83@4a.0-INF (V) width=10 val=deadbeef
+Find rect 72-72 from 72-81@48.0-INF (v) width=1 val=d
+Find rect 73-82 from 73-82@49.0-INF (V) width=10 val=deadbeef
+Find rect 71-71 from 71-80@47.0-INF (v) width=1 val=d
+Find rect 72-81 from 72-81@48.0-INF (V) width=10 val=deadbeef
+Find rect 70-70 from 70-79@46.0-INF (v) width=1 val=d
+Find rect 71-80 from 71-80@47.0-INF (V) width=10 val=deadbeef
+Find rect 69-69 from 69-78@45.0-INF (v) width=1 val=d
+Find rect 70-79 from 70-79@46.0-INF (V) width=10 val=deadbeef
+Find rect 68-68 from 68-77@44.0-INF (v) width=1 val=d
+Find rect 69-78 from 69-78@45.0-INF (V) width=10 val=deadbeef
+Find rect 67-67 from 67-76@43.0-INF (v) width=1 val=d
+Find rect 68-77 from 68-77@44.0-INF (V) width=10 val=deadbeef
+Find rect 66-66 from 66-75@42.0-INF (v) width=1 val=d
+Find rect 67-76 from 67-76@43.0-INF (V) width=10 val=deadbeef
+Find rect 65-65 from 65-74@41.0-INF (v) width=1 val=d
+Find rect 66-75 from 66-75@42.0-INF (V) width=10 val=deadbeef
+Find rect 64-64 from 64-73@40.0-INF (v) width=1 val=d
+Find rect 65-74 from 65-74@41.0-INF (V) width=10 val=deadbeef
+Find rect 63-63 from 63-72@3f.0-INF (v) width=1 val=d
+Find rect 64-73 from 64-73@40.0-INF (V) width=10 val=deadbeef
+Find rect 62-62 from 62-71@3e.0-INF (v) width=1 val=d
+Find rect 63-72 from 63-72@3f.0-INF (V) width=10 val=deadbeef
+Find rect 61-61 from 61-70@3d.0-INF (v) width=1 val=d
+Find rect 62-71 from 62-71@3e.0-INF (V) width=10 val=deadbeef
+Find rect 60-60 from 60-69@3c.0-INF (v) width=1 val=d
+Find rect 61-70 from 61-70@3d.0-INF (V) width=10 val=deadbeef
+Find rect 59-59 from 59-68@3b.0-INF (v) width=1 val=d
+Find rect 60-69 from 60-69@3c.0-INF (V) width=10 val=deadbeef
+Find rect 58-58 from 58-67@3a.0-INF (v) width=1 val=d
+Find rect 59-68 from 59-68@3b.0-INF (V) width=10 val=deadbeef
+Find rect 57-57 from 57-66@39.0-INF (v) width=1 val=d
+Find rect 58-67 from 58-67@3a.0-INF (V) width=10 val=deadbeef
+Find rect 56-56 from 56-65@38.0-INF (v) width=1 val=d
+Find rect 57-66 from 57-66@39.0-INF (V) width=10 val=deadbeef
+Find rect 55-55 from 55-64@37.0-INF (v) width=1 val=d
+Find rect 56-65 from 56-65@38.0-INF (V) width=10 val=deadbeef
+Find rect 54-54 from 54-63@36.0-INF (v) width=1 val=d
+Find rect 55-64 from 55-64@37.0-INF (V) width=10 val=deadbeef
+Find rect 53-53 from 53-62@35.0-INF (v) width=1 val=d
+Find rect 54-63 from 54-63@36.0-INF (V) width=10 val=deadbeef
+Find rect 52-52 from 52-61@34.0-INF (v) width=1 val=d
+Find rect 53-62 from 53-62@35.0-INF (V) width=10 val=deadbeef
+Find rect 51-51 from 51-60@33.0-INF (v) width=1 val=d
+Find rect 52-61 from 52-61@34.0-INF (V) width=10 val=deadbeef
+Find rect 50-50 from 50-59@32.0-INF (v) width=1 val=d
+Find rect 51-60 from 51-60@33.0-INF (V) width=10 val=deadbeef
+Find rect 49-49 from 49-58@31.0-INF (v) width=1 val=d
+Find rect 50-59 from 50-59@32.0-INF (V) width=10 val=deadbeef
+Find rect 48-48 from 48-57@30.0-INF (v) width=1 val=d
+Find rect 49-58 from 49-58@31.0-INF (V) width=10 val=deadbeef
+Find rect 47-47 from 47-56@2f.0-INF (v) width=1 val=d
+Find rect 48-57 from 48-57@30.0-INF (V) width=10 val=deadbeef
+Find rect 46-46 from 46-55@2e.0-INF (v) width=1 val=d
+Find rect 47-56 from 47-56@2f.0-INF (V) width=10 val=deadbeef
+Find rect 45-45 from 45-54@2d.0-INF (v) width=1 val=d
+Find rect 46-55 from 46-55@2e.0-INF (V) width=10 val=deadbeef
+Find rect 44-44 from 44-53@2c.0-INF (v) width=1 val=d
+Find rect 45-54 from 45-54@2d.0-INF (V) width=10 val=deadbeef
+Find rect 43-43 from 43-52@2b.0-INF (v) width=1 val=d
+Find rect 44-53 from 44-53@2c.0-INF (V) width=10 val=deadbeef
+Find rect 42-42 from 42-51@2a.0-INF (v) width=1 val=d
+Find rect 43-52 from 43-52@2b.0-INF (V) width=10 val=deadbeef
+Find rect 41-41 from 41-50@29.0-INF (v) width=1 val=d
+Find rect 42-51 from 42-51@2a.0-INF (V) width=10 val=deadbeef
+Find rect 40-40 from 40-49@28.0-INF (v) width=1 val=d
+Find rect 41-50 from 41-50@29.0-INF (V) width=10 val=deadbeef
+Find rect 39-39 from 39-48@27.0-INF (v) width=1 val=d
+Find rect 40-49 from 40-49@28.0-INF (V) width=10 val=deadbeef
+Find rect 38-38 from 38-47@26.0-INF (v) width=1 val=d
+Find rect 39-48 from 39-48@27.0-INF (V) width=10 val=deadbeef
+Find rect 37-37 from 37-46@25.0-INF (v) width=1 val=d
+Find rect 38-47 from 38-47@26.0-INF (V) width=10 val=deadbeef
+Find rect 36-36 from 36-45@24.0-INF (v) width=1 val=d
+Find rect 37-46 from 37-46@25.0-INF (V) width=10 val=deadbeef
+Find rect 35-35 from 35-44@23.0-INF (v) width=1 val=d
+Find rect 36-45 from 36-45@24.0-INF (V) width=10 val=deadbeef
+Find rect 34-34 from 34-43@22.0-INF (v) width=1 val=d
+Find rect 35-44 from 35-44@23.0-INF (V) width=10 val=deadbeef
+Find rect 33-33 from 33-42@21.0-INF (v) width=1 val=d
+Find rect 34-43 from 34-43@22.0-INF (V) width=10 val=deadbeef
+Find rect 32-32 from 32-41@20.0-INF (v) width=1 val=d
+Find rect 33-42 from 33-42@21.0-INF (V) width=10 val=deadbeef
+Find rect 31-31 from 31-40@1f.0-INF (v) width=1 val=d
+Find rect 32-41 from 32-41@20.0-INF (V) width=10 val=deadbeef
+Find rect 30-30 from 30-39@1e.0-INF (v) width=1 val=d
+Find rect 31-40 from 31-40@1f.0-INF (V) width=10 val=deadbeef
+Find rect 29-29 from 29-38@1d.0-INF (v) width=1 val=d
+Find rect 30-39 from 30-39@1e.0-INF (V) width=10 val=deadbeef
+Find rect 28-28 from 28-37@1c.0-INF (v) width=1 val=d
+Find rect 29-38 from 29-38@1d.0-INF (V) width=10 val=deadbeef
+Find rect 27-27 from 27-36@1b.0-INF (v) width=1 val=d
+Find rect 28-37 from 28-37@1c.0-INF (V) width=10 val=deadbeef
+Find rect 26-26 from 26-35@1a.0-INF (v) width=1 val=d
+Find rect 27-36 from 27-36@1b.0-INF (V) width=10 val=deadbeef
+Find rect 25-25 from 25-34@19.0-INF (v) width=1 val=d
+Find rect 26-35 from 26-35@1a.0-INF (V) width=10 val=deadbeef
+Find rect 24-24 from 24-33@18.0-INF (v) width=1 val=d
+Find rect 25-34 from 25-34@19.0-INF (V) width=10 val=deadbeef
+Find rect 23-23 from 23-32@17.0-INF (v) width=1 val=d
+Find rect 24-33 from 24-33@18.0-INF (V) width=10 val=deadbeef
+Find rect 22-22 from 22-31@16.0-INF (v) width=1 val=d
+Find rect 23-32 from 23-32@17.0-INF (V) width=10 val=deadbeef
+Find rect 21-21 from 21-30@15.0-INF (v) width=1 val=d
+Find rect 22-31 from 22-31@16.0-INF (V) width=10 val=deadbeef
+Find rect 20-20 from 20-29@14.0-INF (v) width=1 val=d
+Find rect 21-30 from 21-30@15.0-INF (V) width=10 val=deadbeef
+Find rect 19-19 from 19-28@13.0-INF (v) width=1 val=d
+Find rect 20-29 from 20-29@14.0-INF (V) width=10 val=deadbeef
+Find rect 18-18 from 18-27@12.0-INF (v) width=1 val=d
+Find rect 19-28 from 19-28@13.0-INF (V) width=10 val=deadbeef
+Find rect 17-17 from 17-26@11.0-INF (v) width=1 val=d
+Find rect 18-27 from 18-27@12.0-INF (V) width=10 val=deadbeef
+Find rect 16-16 from 16-25@10.0-INF (v) width=1 val=d
+Find rect 17-26 from 17-26@11.0-INF (V) width=10 val=deadbeef
+Find rect 15-15 from 15-24@f.0-INF (v) width=1 val=d
+Find rect 16-25 from 16-25@10.0-INF (V) width=10 val=deadbeef
+Find rect 14-14 from 14-23@e.0-INF (v) width=1 val=d
+Find rect 15-24 from 15-24@f.0-INF (V) width=10 val=deadbeef
+Find rect 13-13 from 13-22@d.0-INF (v) width=1 val=d
+Find rect 14-23 from 14-23@e.0-INF (V) width=10 val=deadbeef
+Find rect 12-12 from 12-21@c.0-INF (v) width=1 val=d
+Find rect 13-22 from 13-22@d.0-INF (V) width=10 val=deadbeef
+Find rect 11-11 from 11-20@b.0-INF (v) width=1 val=d
+Find rect 12-21 from 12-21@c.0-INF (V) width=10 val=deadbeef
+Find rect 10-10 from 10-19@a.0-INF (v) width=1 val=None
+Find rect 11-20 from 11-20@b.0-INF (V) width=10 val=deadbeef
+Find rect 9-9 from 9-18@9.0-INF (v) width=1 val=d
+Find rect 10-19 from 10-19@a.0-INF (V) width=10 val=None
+Find rect 8-8 from 8-17@8.0-INF (v) width=1 val=d
+Find rect 9-18 from 9-18@9.0-INF (V) width=10 val=deadbeef
+Find rect 7-7 from 7-16@7.0-INF (v) width=1 val=d
+Find rect 8-17 from 8-17@8.0-INF (V) width=10 val=deadbeef
+Find rect 6-6 from 6-15@6.0-INF (v) width=1 val=d
+Find rect 7-16 from 7-16@7.0-INF (V) width=10 val=deadbeef
+Find rect 5-5 from 5-14@5.0-INF (v) width=1 val=d
+Find rect 6-15 from 6-15@6.0-INF (V) width=10 val=deadbeef
+Find rect 4-4 from 4-13@4.0-INF (v) width=1 val=d
+Find rect 5-14 from 5-14@5.0-INF (V) width=10 val=deadbeef
+Find rect 3-3 from 3-12@3.0-INF (v) width=1 val=d
+Find rect 4-13 from 4-13@4.0-INF (V) width=10 val=deadbeef
+Find rect 2-2 from 2-11@2.0-INF (v) width=1 val=d
+Find rect 3-12 from 3-12@3.0-INF (V) width=10 val=deadbeef
+Find rect 1-1 from 1-10@1.0-INF (v) width=1 val=d
+Find rect 2-11 from 2-11@2.0-INF (V) width=10 val=deadbeef
+Find rect 1-10 from 1-10@1.0-INF (V) width=10 val=deadbeef
+[       OK ] EVT055: evt_find_internal
+[ RUN      ] EVT015: evt_overlap_split_internal
+Tree depth :2
+Tree depth :3
+Tree depth :2
+[       OK ] EVT015: evt_overlap_split_internal
+[ RUN      ] EVT016: evt_variable_record_size_internal
+10/29-01:17:47.20 wolf-26 DAOS[15871/15871] vos  ERR  src/vos/evtree.c:1989 evt_insert() Variable record size not supported in evtree: 16384 != 1024
+10/29-01:17:47.21 wolf-26 DAOS[15871/15871] vos  ERR  src/vos/evtree.c:1989 evt_insert() Variable record size not supported in evtree: 16384 != 1024
+[       OK ] EVT016: evt_variable_record_size_internal
+[ RUN      ] EVT017: evt_iter_outer_punch
+[       OK ] EVT017: evt_iter_outer_punch
+[ RUN      ] EVT018: evt_node_size_internal
+Utest pmem pool couldn't be created: File exists
+Evtree internal test couldn't create pool: Invalid argument
+Could not run test: Test setup failed
+[  ERROR   ] EVT018: evt_node_size_internal
+[ RUN      ] EVT019: evt_various_data_size_internal
+Data Size: 1024
+Deleting evtree contents
+Data Size: 16384
+Deleting evtree contents
+Data Size: 262144
+Deleting evtree contents
+Data Size: 524288
+Deleting evtree contents
+Data Size: 1048576
+Deleting evtree contents
+Data Size: 268435456
+Deleting evtree contents
+[       OK ] EVT019: evt_various_data_size_internal
+[==========] 11 test(s) run.
+[  PASSED  ] 10 test(s).
+Internal tests failed rc=DER_UNKNOWN(1): 'Unknown error code 1'

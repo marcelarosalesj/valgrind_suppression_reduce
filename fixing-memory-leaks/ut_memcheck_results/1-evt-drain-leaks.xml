@@ -1,0 +1,659 @@
+<?xml version="1.0"?>
+
+<valgrindoutput>
+
+<protocolversion>4</protocolversion>
+<protocoltool>memcheck</protocoltool>
+
+<preamble>
+  <line>Memcheck, a memory error detector</line>
+  <line>Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.</line>
+  <line>Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info</line>
+  <line>Command: ./install/bin/evt_ctl --start-test evtree drain tests -C o:4 -e s:0,e:128,n:2379 -c</line>
+</preamble>
+
+<pid>55998</pid>
+<ppid>61453</ppid>
+<tool>memcheck</tool>
+
+<args>
+  <vargv>
+    <exe>/opt/pmemcheck/bin/valgrind</exe>
+    <arg>--leak-check=full</arg>
+    <arg>--show-reachable=yes</arg>
+    <arg>--error-limit=no</arg>
+    <arg>--xml=yes</arg>
+    <arg>--xml-file=test_results/1-evt-drain-leaks.xml</arg>
+    <arg>--num-callers=24</arg>
+    <arg>--keep-debuginfo=yes</arg>
+    <arg>--track-origins=yes</arg>
+  </vargv>
+  <argv>
+    <exe>./install/bin/evt_ctl</exe>
+    <arg>--start-test</arg>
+    <arg>evtree drain tests</arg>
+    <arg>-C</arg>
+    <arg>o:4</arg>
+    <arg>-e</arg>
+    <arg>s:0,e:128,n:2379</arg>
+    <arg>-c</arg>
+  </argv>
+</args>
+
+<status>
+  <state>RUNNING</state>
+  <time>00:00:00:00.133 </time>
+</status>
+
+
+<status>
+  <state>FINISHED</state>
+  <time>00:00:00:02.252 </time>
+</status>
+
+<error>
+  <unique>0x0</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>16 bytes in 1 blocks are still reachable in loss record 1 of 9</text>
+    <leakedbytes>16</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C29EA3</ip>
+      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>309</line>
+    </frame>
+    <frame>
+      <ip>0x677A7F8</ip>
+      <obj>/usr/lib64/libgomp.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0x678961B</ip>
+      <obj>/usr/lib64/libgomp.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0x6778E56</ip>
+      <obj>/usr/lib64/libgomp.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0x400F972</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+      <fn>_dl_init</fn>
+    </frame>
+    <frame>
+      <ip>0x4001159</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+    </frame>
+    <frame>
+      <ip>0x7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF36A</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF380</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF38D</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A0</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A3</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3AA</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3BB</ip>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x1</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>30 bytes in 1 blocks are still reachable in loss record 2 of 9</text>
+    <leakedbytes>30</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C29EA3</ip>
+      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>309</line>
+    </frame>
+    <frame>
+      <ip>0xD7E2C36</ip>
+      <obj>/home/marosale/Repos/daos/install/prereq/dev/psm2/lib64/libpsm2.so.2.1</obj>
+      <fn>sysfs_init</fn>
+      <dir>/home/marosale/Repos/daos/build/external/dev/psm2/opa</dir>
+      <file>opa_sysfs.c</file>
+      <line>89</line>
+    </frame>
+    <frame>
+      <ip>0x400F972</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+      <fn>_dl_init</fn>
+    </frame>
+    <frame>
+      <ip>0x4001159</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+    </frame>
+    <frame>
+      <ip>0x7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF36A</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF380</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF38D</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A0</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A3</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3AA</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3BB</ip>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x2</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>249 bytes in 29 blocks are still reachable in loss record 3 of 9</text>
+    <leakedbytes>249</leakedbytes>
+    <leakedblocks>29</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C29EA3</ip>
+      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>309</line>
+    </frame>
+    <frame>
+      <ip>0x6A23AA9</ip>
+      <obj>/usr/lib64/libc-2.17.so</obj>
+      <fn>strdup</fn>
+    </frame>
+    <frame>
+      <ip>0x81C7DE2</ip>
+      <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/librte_eal.so.20.0</obj>
+      <fn>rte_log_init</fn>
+    </frame>
+    <frame>
+      <ip>0x400F972</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+      <fn>_dl_init</fn>
+    </frame>
+    <frame>
+      <ip>0x4001159</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+    </frame>
+    <frame>
+      <ip>0x7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF36A</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF380</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF38D</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A0</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A3</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3AA</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3BB</ip>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x3</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>372 bytes in 19 blocks are still reachable in loss record 4 of 9</text>
+    <leakedbytes>372</leakedbytes>
+    <leakedblocks>19</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C29EA3</ip>
+      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>309</line>
+    </frame>
+    <frame>
+      <ip>0x6A23AA9</ip>
+      <obj>/usr/lib64/libc-2.17.so</obj>
+      <fn>strdup</fn>
+    </frame>
+    <frame>
+      <ip>0x9946DF9</ip>
+      <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/libspdk_rpc.so.2.0</obj>
+      <fn>spdk_rpc_register_alias_deprecated</fn>
+      <dir>/home/marosale/Repos/daos/build/external/dev/spdk/lib/rpc</dir>
+      <file>rpc.c</file>
+      <line>303</line>
+    </frame>
+    <frame>
+      <ip>0x400F972</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+      <fn>_dl_init</fn>
+    </frame>
+    <frame>
+      <ip>0x4001159</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+    </frame>
+    <frame>
+      <ip>0x7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF36A</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF380</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF38D</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A0</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A3</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3AA</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3BB</ip>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x4</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>512 bytes in 1 blocks are still reachable in loss record 5 of 9</text>
+    <leakedbytes>512</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2BFB9</ip>
+      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>762</line>
+    </frame>
+    <frame>
+      <ip>0x81C7DB2</ip>
+      <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/librte_eal.so.20.0</obj>
+      <fn>rte_log_init</fn>
+    </frame>
+    <frame>
+      <ip>0x400F972</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+      <fn>_dl_init</fn>
+    </frame>
+    <frame>
+      <ip>0x4001159</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+    </frame>
+    <frame>
+      <ip>0x7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF36A</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF380</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF38D</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A0</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A3</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3AA</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3BB</ip>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x5</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>588 bytes in 28 blocks are still reachable in loss record 6 of 9</text>
+    <leakedbytes>588</leakedbytes>
+    <leakedblocks>28</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C29EA3</ip>
+      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>309</line>
+    </frame>
+    <frame>
+      <ip>0x6A23AA9</ip>
+      <obj>/usr/lib64/libc-2.17.so</obj>
+      <fn>strdup</fn>
+    </frame>
+    <frame>
+      <ip>0x9946D29</ip>
+      <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/libspdk_rpc.so.2.0</obj>
+      <fn>spdk_rpc_register_method</fn>
+      <dir>/home/marosale/Repos/daos/build/external/dev/spdk/lib/rpc</dir>
+      <file>rpc.c</file>
+      <line>271</line>
+    </frame>
+    <frame>
+      <ip>0x400F972</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+      <fn>_dl_init</fn>
+    </frame>
+    <frame>
+      <ip>0x4001159</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+    </frame>
+    <frame>
+      <ip>0x7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF36A</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF380</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF38D</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A0</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A3</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3AA</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3BB</ip>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x6</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>696 bytes in 3 blocks are still reachable in loss record 7 of 9</text>
+    <leakedbytes>696</leakedbytes>
+    <leakedblocks>3</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2BFB9</ip>
+      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>762</line>
+    </frame>
+    <frame>
+      <ip>0x9103F12</ip>
+      <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/libspdk_nvme.so.2.0</obj>
+      <fn>spdk_nvme_transport_register</fn>
+      <dir>/home/marosale/Repos/daos/build/external/dev/spdk/lib/nvme</dir>
+      <file>nvme_transport.c</file>
+      <line>87</line>
+    </frame>
+    <frame>
+      <ip>0x400F972</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+      <fn>_dl_init</fn>
+    </frame>
+    <frame>
+      <ip>0x4001159</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+    </frame>
+    <frame>
+      <ip>0x7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF36A</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF380</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF38D</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A0</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A3</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3AA</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3BB</ip>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x7</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>912 bytes in 19 blocks are still reachable in loss record 8 of 9</text>
+    <leakedbytes>912</leakedbytes>
+    <leakedblocks>19</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2BFB9</ip>
+      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>762</line>
+    </frame>
+    <frame>
+      <ip>0x9946DEE</ip>
+      <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/libspdk_rpc.so.2.0</obj>
+      <fn>spdk_rpc_register_alias_deprecated</fn>
+      <dir>/home/marosale/Repos/daos/build/external/dev/spdk/lib/rpc</dir>
+      <file>rpc.c</file>
+      <line>300</line>
+    </frame>
+    <frame>
+      <ip>0x400F972</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+      <fn>_dl_init</fn>
+    </frame>
+    <frame>
+      <ip>0x4001159</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+    </frame>
+    <frame>
+      <ip>0x7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF36A</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF380</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF38D</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A0</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A3</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3AA</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3BB</ip>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x8</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>1,344 bytes in 28 blocks are still reachable in loss record 9 of 9</text>
+    <leakedbytes>1344</leakedbytes>
+    <leakedblocks>28</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2BFB9</ip>
+      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>762</line>
+    </frame>
+    <frame>
+      <ip>0x9946D1E</ip>
+      <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/libspdk_rpc.so.2.0</obj>
+      <fn>spdk_rpc_register_method</fn>
+      <dir>/home/marosale/Repos/daos/build/external/dev/spdk/lib/rpc</dir>
+      <file>rpc.c</file>
+      <line>268</line>
+    </frame>
+    <frame>
+      <ip>0x400F972</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+      <fn>_dl_init</fn>
+    </frame>
+    <frame>
+      <ip>0x4001159</ip>
+      <obj>/usr/lib64/ld-2.17.so</obj>
+    </frame>
+    <frame>
+      <ip>0x7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF36A</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF380</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF38D</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A0</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A3</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3A7</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3AA</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF3BB</ip>
+    </frame>
+  </stack>
+</error>
+
+<errorcounts>
+</errorcounts>
+
+<suppcounts>
+</suppcounts>
+
+</valgrindoutput>
+
