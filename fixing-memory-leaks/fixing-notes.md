@@ -66,6 +66,7 @@ Results: 1 InvalidWrite, 4 Leak_DefinitelyLost, 3 Leak_IndirectlyLost, 9 Leak_St
 
 ```
 [memcheck xmls](ut_memcheck_results/2-evt-internal-leaks.xml) and [test logs](ut_logs/2-evt-internal-leaks.log)
+- [InvalidWrite PR](https://github.com/daos-stack/daos/pull/3764)
 
 * 3 - evt sequence without pmem
 ```

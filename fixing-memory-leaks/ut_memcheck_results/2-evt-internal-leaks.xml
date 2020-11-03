@@ -12,7 +12,7 @@
   <line>Command: ./install/bin/evt_ctl --start-test evtree built-in tests -t</line>
 </preamble>
 
-<pid>15871</pid>
+<pid>68876</pid>
 <ppid>61453</ppid>
 <tool>memcheck</tool>
 
@@ -23,7 +23,7 @@
     <arg>--show-reachable=yes</arg>
     <arg>--error-limit=no</arg>
     <arg>--xml=yes</arg>
-    <arg>--xml-file=test_results/2-evt-internal-leaks-2.xml</arg>
+    <arg>--xml-file=test_results/2-evt-internal-leaks.xml</arg>
     <arg>--num-callers=24</arg>
     <arg>--keep-debuginfo=yes</arg>
     <arg>--track-origins=yes</arg>
@@ -41,108 +41,14 @@
   <time>00:00:00:00.133 </time>
 </status>
 
-<error>
-  <unique>0x0</unique>
-  <tid>1</tid>
-  <kind>InvalidWrite</kind>
-  <what>Invalid write of size 1</what>
-  <stack>
-    <frame>
-      <ip>0x4C2D78C</ip>
-      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>__strncpy_sse2_unaligned</fn>
-      <dir>/home/marosale/Repos/valgrind/memcheck/../shared</dir>
-      <file>vg_replace_strmem.c</file>
-      <line>555</line>
-    </frame>
-    <frame>
-      <ip>0x4099BA</ip>
-      <obj>/home/marosale/Repos/daos/install/bin/evt_ctl</obj>
-      <fn>test_evt_various_data_size_internal</fn>
-      <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
-      <file>evt_ctl.c</file>
-      <line>1685</line>
-    </frame>
-    <frame>
-      <ip>0x656ADA1</ip>
-      <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
-    </frame>
-    <frame>
-      <ip>0x656B7A4</ip>
-      <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
-      <fn>_cmocka_run_group_tests</fn>
-    </frame>
-    <frame>
-      <ip>0x4038F7</ip>
-      <obj>/home/marosale/Repos/daos/install/bin/evt_ctl</obj>
-      <fn>run_internal_tests</fn>
-      <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
-      <file>evt_ctl.c</file>
-      <line>2245</line>
-    </frame>
-    <frame>
-      <ip>0x40B03C</ip>
-      <obj>/home/marosale/Repos/daos/install/bin/evt_ctl</obj>
-      <fn>main</fn>
-      <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
-      <file>evt_ctl.c</file>
-      <line>2432</line>
-    </frame>
-  </stack>
-  <auxwhat>Address 0xfe89bb0 is 0 bytes after a block of size 1,024 alloc'd</auxwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2BFB9</ip>
-      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>762</line>
-    </frame>
-    <frame>
-      <ip>0x40963E</ip>
-      <obj>/home/marosale/Repos/daos/install/bin/evt_ctl</obj>
-      <fn>test_evt_various_data_size_internal</fn>
-      <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
-      <file>evt_ctl.c</file>
-      <line>1683</line>
-    </frame>
-    <frame>
-      <ip>0x656ADA1</ip>
-      <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
-    </frame>
-    <frame>
-      <ip>0x656B7A4</ip>
-      <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
-      <fn>_cmocka_run_group_tests</fn>
-    </frame>
-    <frame>
-      <ip>0x4038F7</ip>
-      <obj>/home/marosale/Repos/daos/install/bin/evt_ctl</obj>
-      <fn>run_internal_tests</fn>
-      <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
-      <file>evt_ctl.c</file>
-      <line>2245</line>
-    </frame>
-    <frame>
-      <ip>0x40B03C</ip>
-      <obj>/home/marosale/Repos/daos/install/bin/evt_ctl</obj>
-      <fn>main</fn>
-      <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
-      <file>evt_ctl.c</file>
-      <line>2432</line>
-    </frame>
-  </stack>
-</error>
-
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:14:41.780 </time>
+  <time>00:00:15:42.226 </time>
 </status>
 
 <error>
-  <unique>0x6</unique>
+  <unique>0x0</unique>
   <tid>1</tid>
   <kind>Leak_StillReachable</kind>
   <xwhat>
@@ -160,15 +66,15 @@
       <line>309</line>
     </frame>
     <frame>
-      <ip>0x677A7F8</ip>
+      <ip>0x677B7F8</ip>
       <obj>/usr/lib64/libgomp.so.1.0.0</obj>
     </frame>
     <frame>
-      <ip>0x678961B</ip>
+      <ip>0x678A61B</ip>
       <obj>/usr/lib64/libgomp.so.1.0.0</obj>
     </frame>
     <frame>
-      <ip>0x6778E56</ip>
+      <ip>0x6779E56</ip>
       <obj>/usr/lib64/libgomp.so.1.0.0</obj>
     </frame>
     <frame>
@@ -199,7 +105,7 @@
 </error>
 
 <error>
-  <unique>0x7</unique>
+  <unique>0x1</unique>
   <tid>1</tid>
   <kind>Leak_StillReachable</kind>
   <xwhat>
@@ -217,7 +123,7 @@
       <line>309</line>
     </frame>
     <frame>
-      <ip>0xD7E2C36</ip>
+      <ip>0xD7E3C36</ip>
       <obj>/home/marosale/Repos/daos/install/prereq/dev/psm2/lib64/libpsm2.so.2.1</obj>
       <fn>sysfs_init</fn>
       <dir>/home/marosale/Repos/daos/build/external/dev/psm2/opa</dir>
@@ -252,7 +158,7 @@
 </error>
 
 <error>
-  <unique>0x8</unique>
+  <unique>0x2</unique>
   <tid>1</tid>
   <kind>Leak_StillReachable</kind>
   <xwhat>
@@ -270,12 +176,12 @@
       <line>309</line>
     </frame>
     <frame>
-      <ip>0x6A23AA9</ip>
+      <ip>0x6A24AA9</ip>
       <obj>/usr/lib64/libc-2.17.so</obj>
       <fn>strdup</fn>
     </frame>
     <frame>
-      <ip>0x81C7DE2</ip>
+      <ip>0x81C8DE2</ip>
       <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/librte_eal.so.20.0</obj>
       <fn>rte_log_init</fn>
     </frame>
@@ -307,7 +213,7 @@
 </error>
 
 <error>
-  <unique>0x9</unique>
+  <unique>0x3</unique>
   <tid>1</tid>
   <kind>Leak_StillReachable</kind>
   <xwhat>
@@ -325,12 +231,12 @@
       <line>309</line>
     </frame>
     <frame>
-      <ip>0x6A23AA9</ip>
+      <ip>0x6A24AA9</ip>
       <obj>/usr/lib64/libc-2.17.so</obj>
       <fn>strdup</fn>
     </frame>
     <frame>
-      <ip>0x9946DF9</ip>
+      <ip>0x9947DF9</ip>
       <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/libspdk_rpc.so.2.0</obj>
       <fn>spdk_rpc_register_alias_deprecated</fn>
       <dir>/home/marosale/Repos/daos/build/external/dev/spdk/lib/rpc</dir>
@@ -365,7 +271,7 @@
 </error>
 
 <error>
-  <unique>0xa</unique>
+  <unique>0x4</unique>
   <tid>1</tid>
   <kind>Leak_StillReachable</kind>
   <xwhat>
@@ -383,7 +289,7 @@
       <line>762</line>
     </frame>
     <frame>
-      <ip>0x81C7DB2</ip>
+      <ip>0x81C8DB2</ip>
       <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/librte_eal.so.20.0</obj>
       <fn>rte_log_init</fn>
     </frame>
@@ -415,7 +321,7 @@
 </error>
 
 <error>
-  <unique>0xb</unique>
+  <unique>0x5</unique>
   <tid>1</tid>
   <kind>Leak_StillReachable</kind>
   <xwhat>
@@ -433,12 +339,12 @@
       <line>309</line>
     </frame>
     <frame>
-      <ip>0x6A23AA9</ip>
+      <ip>0x6A24AA9</ip>
       <obj>/usr/lib64/libc-2.17.so</obj>
       <fn>strdup</fn>
     </frame>
     <frame>
-      <ip>0x9946D29</ip>
+      <ip>0x9947D29</ip>
       <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/libspdk_rpc.so.2.0</obj>
       <fn>spdk_rpc_register_method</fn>
       <dir>/home/marosale/Repos/daos/build/external/dev/spdk/lib/rpc</dir>
@@ -473,7 +379,7 @@
 </error>
 
 <error>
-  <unique>0xc</unique>
+  <unique>0x6</unique>
   <tid>1</tid>
   <kind>Leak_StillReachable</kind>
   <xwhat>
@@ -491,7 +397,7 @@
       <line>762</line>
     </frame>
     <frame>
-      <ip>0x9103F12</ip>
+      <ip>0x9104F12</ip>
       <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/libspdk_nvme.so.2.0</obj>
       <fn>spdk_nvme_transport_register</fn>
       <dir>/home/marosale/Repos/daos/build/external/dev/spdk/lib/nvme</dir>
@@ -526,7 +432,7 @@
 </error>
 
 <error>
-  <unique>0xd</unique>
+  <unique>0x7</unique>
   <tid>1</tid>
   <kind>Leak_StillReachable</kind>
   <xwhat>
@@ -544,7 +450,7 @@
       <line>762</line>
     </frame>
     <frame>
-      <ip>0x9946DEE</ip>
+      <ip>0x9947DEE</ip>
       <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/libspdk_rpc.so.2.0</obj>
       <fn>spdk_rpc_register_alias_deprecated</fn>
       <dir>/home/marosale/Repos/daos/build/external/dev/spdk/lib/rpc</dir>
@@ -579,7 +485,7 @@
 </error>
 
 <error>
-  <unique>0xe</unique>
+  <unique>0x8</unique>
   <tid>1</tid>
   <kind>Leak_StillReachable</kind>
   <xwhat>
@@ -597,7 +503,7 @@
       <line>762</line>
     </frame>
     <frame>
-      <ip>0x9946D1E</ip>
+      <ip>0x9947D1E</ip>
       <obj>/home/marosale/Repos/daos/install/prereq/dev/spdk/lib/libspdk_rpc.so.2.0</obj>
       <fn>spdk_rpc_register_method</fn>
       <dir>/home/marosale/Repos/daos/build/external/dev/spdk/lib/rpc</dir>
@@ -632,7 +538,7 @@
 </error>
 
 <error>
-  <unique>0xf</unique>
+  <unique>0x9</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
@@ -658,11 +564,11 @@
       <line>1083</line>
     </frame>
     <frame>
-      <ip>0x656ADA1</ip>
+      <ip>0x656BDA1</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
     </frame>
     <frame>
-      <ip>0x656B7A4</ip>
+      <ip>0x656C7A4</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
       <fn>_cmocka_run_group_tests</fn>
     </frame>
@@ -672,7 +578,7 @@
       <fn>run_internal_tests</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2245</line>
+      <line>2246</line>
     </frame>
     <frame>
       <ip>0x40B03C</ip>
@@ -680,13 +586,13 @@
       <fn>main</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2432</line>
+      <line>2433</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x10</unique>
+  <unique>0xa</unique>
   <tid>1</tid>
   <kind>Leak_IndirectlyLost</kind>
   <xwhat>
@@ -749,7 +655,7 @@
       <fn>test_evt_overlap_split</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1911</line>
+      <line>1912</line>
     </frame>
     <frame>
       <ip>0x40AE45</ip>
@@ -757,14 +663,14 @@
       <fn>test_evt_overlap_split_internal</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1949</line>
+      <line>1950</line>
     </frame>
     <frame>
-      <ip>0x656ADA1</ip>
+      <ip>0x656BDA1</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
     </frame>
     <frame>
-      <ip>0x656B7A4</ip>
+      <ip>0x656C7A4</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
       <fn>_cmocka_run_group_tests</fn>
     </frame>
@@ -774,7 +680,7 @@
       <fn>run_internal_tests</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2245</line>
+      <line>2246</line>
     </frame>
     <frame>
       <ip>0x40B03C</ip>
@@ -782,13 +688,13 @@
       <fn>main</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2432</line>
+      <line>2433</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x11</unique>
+  <unique>0xb</unique>
   <tid>1</tid>
   <kind>Leak_IndirectlyLost</kind>
   <xwhat>
@@ -851,7 +757,7 @@
       <fn>test_evt_overlap_split</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1911</line>
+      <line>1912</line>
     </frame>
     <frame>
       <ip>0x40AE69</ip>
@@ -859,14 +765,14 @@
       <fn>test_evt_overlap_split_internal</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1951</line>
+      <line>1952</line>
     </frame>
     <frame>
-      <ip>0x656ADA1</ip>
+      <ip>0x656BDA1</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
     </frame>
     <frame>
-      <ip>0x656B7A4</ip>
+      <ip>0x656C7A4</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
       <fn>_cmocka_run_group_tests</fn>
     </frame>
@@ -876,7 +782,7 @@
       <fn>run_internal_tests</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2245</line>
+      <line>2246</line>
     </frame>
     <frame>
       <ip>0x40B03C</ip>
@@ -884,13 +790,13 @@
       <fn>main</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2432</line>
+      <line>2433</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x12</unique>
+  <unique>0xc</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
@@ -937,7 +843,7 @@
       <fn>test_evt_overlap_split</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1908</line>
+      <line>1909</line>
     </frame>
     <frame>
       <ip>0x40AE45</ip>
@@ -945,14 +851,14 @@
       <fn>test_evt_overlap_split_internal</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1949</line>
+      <line>1950</line>
     </frame>
     <frame>
-      <ip>0x656ADA1</ip>
+      <ip>0x656BDA1</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
     </frame>
     <frame>
-      <ip>0x656B7A4</ip>
+      <ip>0x656C7A4</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
       <fn>_cmocka_run_group_tests</fn>
     </frame>
@@ -962,7 +868,7 @@
       <fn>run_internal_tests</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2245</line>
+      <line>2246</line>
     </frame>
     <frame>
       <ip>0x40B03C</ip>
@@ -970,13 +876,13 @@
       <fn>main</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2432</line>
+      <line>2433</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x13</unique>
+  <unique>0xd</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
@@ -1023,7 +929,7 @@
       <fn>test_evt_overlap_split</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1908</line>
+      <line>1909</line>
     </frame>
     <frame>
       <ip>0x40AE69</ip>
@@ -1031,14 +937,14 @@
       <fn>test_evt_overlap_split_internal</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1951</line>
+      <line>1952</line>
     </frame>
     <frame>
-      <ip>0x656ADA1</ip>
+      <ip>0x656BDA1</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
     </frame>
     <frame>
-      <ip>0x656B7A4</ip>
+      <ip>0x656C7A4</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
       <fn>_cmocka_run_group_tests</fn>
     </frame>
@@ -1048,7 +954,7 @@
       <fn>run_internal_tests</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2245</line>
+      <line>2246</line>
     </frame>
     <frame>
       <ip>0x40B03C</ip>
@@ -1056,13 +962,13 @@
       <fn>main</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2432</line>
+      <line>2433</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x14</unique>
+  <unique>0xe</unique>
   <tid>1</tid>
   <kind>Leak_IndirectlyLost</kind>
   <xwhat>
@@ -1125,7 +1031,7 @@
       <fn>test_evt_overlap_split</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1911</line>
+      <line>1912</line>
     </frame>
     <frame>
       <ip>0x40AE57</ip>
@@ -1133,14 +1039,14 @@
       <fn>test_evt_overlap_split_internal</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1950</line>
+      <line>1951</line>
     </frame>
     <frame>
-      <ip>0x656ADA1</ip>
+      <ip>0x656BDA1</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
     </frame>
     <frame>
-      <ip>0x656B7A4</ip>
+      <ip>0x656C7A4</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
       <fn>_cmocka_run_group_tests</fn>
     </frame>
@@ -1150,7 +1056,7 @@
       <fn>run_internal_tests</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2245</line>
+      <line>2246</line>
     </frame>
     <frame>
       <ip>0x40B03C</ip>
@@ -1158,13 +1064,13 @@
       <fn>main</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2432</line>
+      <line>2433</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x15</unique>
+  <unique>0xf</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
@@ -1211,7 +1117,7 @@
       <fn>test_evt_overlap_split</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1908</line>
+      <line>1909</line>
     </frame>
     <frame>
       <ip>0x40AE57</ip>
@@ -1219,14 +1125,14 @@
       <fn>test_evt_overlap_split_internal</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>1950</line>
+      <line>1951</line>
     </frame>
     <frame>
-      <ip>0x656ADA1</ip>
+      <ip>0x656BDA1</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
     </frame>
     <frame>
-      <ip>0x656B7A4</ip>
+      <ip>0x656C7A4</ip>
       <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
       <fn>_cmocka_run_group_tests</fn>
     </frame>
@@ -1236,7 +1142,7 @@
       <fn>run_internal_tests</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2245</line>
+      <line>2246</line>
     </frame>
     <frame>
       <ip>0x40B03C</ip>
@@ -1244,16 +1150,12 @@
       <fn>main</fn>
       <dir>/home/marosale/Repos/daos/src/vos/tests</dir>
       <file>evt_ctl.c</file>
-      <line>2432</line>
+      <line>2433</line>
     </frame>
   </stack>
 </error>
 
 <errorcounts>
-  <pair>
-    <count>6</count>
-    <unique>0x0</unique>
-  </pair>
 </errorcounts>
 
 <suppcounts>

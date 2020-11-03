@@ -1,4 +1,4 @@
-10/29-01:07:38.04 wolf-26 DAOS[15871/15871] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+10/30-16:12:28.35 wolf-26 DAOS[68876/68876] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
 [==========] Running 11 test(s).
 [ RUN      ] EVT050: evt_iter_delete
 [       OK ] EVT050: evt_iter_delete
@@ -10,7 +10,7 @@ Number of entries is 872
 [ RUN      ] EVT053: evt_root_deactivate_bug
 [       OK ] EVT053: evt_root_deactivate_bug
 [ RUN      ] EVT054: evt_iter_flags
-Hole inserted 21 epoch.
+Hole inserted 2 epoch.
 EVT_ITER_SKIP_HOLES (VISIBLE)
 Compare Expected/Actual Result
 RC: DER_SUCCESS(0): 'Success'
@@ -40,7 +40,7 @@ Compare Expected/Actual Result
 RC: DER_SUCCESS(0): 'Success'
 [       OK ] EVT054: evt_iter_flags
 [ RUN      ] EVT055: evt_find_internal
-Hole inserted 10 epoch.
+Hole inserted 61 epoch.
 Find rect 99-99 from 99-108@63.0-INF (v) width=1 val=d
 Find rect 100-109 from 100-109@64.0-INF (V) width=10 val=deadbeef
 Find rect 98-98 from 98-107@62.0-INF (v) width=1 val=d
@@ -117,10 +117,10 @@ Find rect 63-63 from 63-72@3f.0-INF (v) width=1 val=d
 Find rect 64-73 from 64-73@40.0-INF (V) width=10 val=deadbeef
 Find rect 62-62 from 62-71@3e.0-INF (v) width=1 val=d
 Find rect 63-72 from 63-72@3f.0-INF (V) width=10 val=deadbeef
-Find rect 61-61 from 61-70@3d.0-INF (v) width=1 val=d
+Find rect 61-61 from 61-70@3d.0-INF (v) width=1 val=None
 Find rect 62-71 from 62-71@3e.0-INF (V) width=10 val=deadbeef
 Find rect 60-60 from 60-69@3c.0-INF (v) width=1 val=d
-Find rect 61-70 from 61-70@3d.0-INF (V) width=10 val=deadbeef
+Find rect 61-70 from 61-70@3d.0-INF (V) width=10 val=None
 Find rect 59-59 from 59-68@3b.0-INF (v) width=1 val=d
 Find rect 60-69 from 60-69@3c.0-INF (V) width=10 val=deadbeef
 Find rect 58-58 from 58-67@3a.0-INF (v) width=1 val=d
@@ -219,10 +219,10 @@ Find rect 12-12 from 12-21@c.0-INF (v) width=1 val=d
 Find rect 13-22 from 13-22@d.0-INF (V) width=10 val=deadbeef
 Find rect 11-11 from 11-20@b.0-INF (v) width=1 val=d
 Find rect 12-21 from 12-21@c.0-INF (V) width=10 val=deadbeef
-Find rect 10-10 from 10-19@a.0-INF (v) width=1 val=None
+Find rect 10-10 from 10-19@a.0-INF (v) width=1 val=d
 Find rect 11-20 from 11-20@b.0-INF (V) width=10 val=deadbeef
 Find rect 9-9 from 9-18@9.0-INF (v) width=1 val=d
-Find rect 10-19 from 10-19@a.0-INF (V) width=10 val=None
+Find rect 10-19 from 10-19@a.0-INF (V) width=10 val=deadbeef
 Find rect 8-8 from 8-17@8.0-INF (v) width=1 val=d
 Find rect 9-18 from 9-18@9.0-INF (V) width=10 val=deadbeef
 Find rect 7-7 from 7-16@7.0-INF (v) width=1 val=d
@@ -247,16 +247,88 @@ Tree depth :3
 Tree depth :2
 [       OK ] EVT015: evt_overlap_split_internal
 [ RUN      ] EVT016: evt_variable_record_size_internal
-10/29-01:17:47.20 wolf-26 DAOS[15871/15871] vos  ERR  src/vos/evtree.c:1989 evt_insert() Variable record size not supported in evtree: 16384 != 1024
-10/29-01:17:47.21 wolf-26 DAOS[15871/15871] vos  ERR  src/vos/evtree.c:1989 evt_insert() Variable record size not supported in evtree: 16384 != 1024
+10/30-16:22:33.46 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:1989 evt_insert() Variable record size not supported in evtree: 16384 != 1024
+10/30-16:22:33.46 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:1989 evt_insert() Variable record size not supported in evtree: 16384 != 1024
 [       OK ] EVT016: evt_variable_record_size_internal
 [ RUN      ] EVT017: evt_iter_outer_punch
 [       OK ] EVT017: evt_iter_outer_punch
 [ RUN      ] EVT018: evt_node_size_internal
-Utest pmem pool couldn't be created: File exists
-Evtree internal test couldn't create pool: Invalid argument
-Could not run test: Test setup failed
-[  ERROR   ] EVT018: evt_node_size_internal
+10/30-16:25:04.93 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 0
+10/30-16:25:04.93 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 1
+10/30-16:25:04.93 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 2
+10/30-16:25:04.93 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 3
+10/30-16:25:04.98 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 129
+10/30-16:25:04.98 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 130
+10/30-16:25:04.98 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 131
+10/30-16:25:04.98 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 132
+10/30-16:25:04.98 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 133
+10/30-16:25:04.98 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 134
+10/30-16:25:04.98 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 135
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 136
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 137
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 138
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 139
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 140
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 141
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 142
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 143
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 144
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 145
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 146
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 147
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 148
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 149
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 150
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 151
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 152
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 153
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 154
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 155
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 156
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 157
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 158
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 159
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 160
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 161
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 162
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 163
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 164
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 165
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 166
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 167
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 168
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 169
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 170
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 171
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 172
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 173
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 174
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 175
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 176
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 177
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 178
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 179
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 180
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 181
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 182
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 183
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 184
+10/30-16:25:04.99 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 185
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 186
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 187
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 188
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 189
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 190
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 191
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 192
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 193
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 194
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 195
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 196
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 197
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 198
+10/30-16:25:05.00 wolf-26 DAOS[68876/68876] vos  ERR  src/vos/evtree.c:2463 evt_create() Invalid tree order 199
+[       OK ] EVT018: evt_node_size_internal
 [ RUN      ] EVT019: evt_various_data_size_internal
 Data Size: 1024
 Deleting evtree contents
@@ -272,5 +344,4 @@ Data Size: 268435456
 Deleting evtree contents
 [       OK ] EVT019: evt_various_data_size_internal
 [==========] 11 test(s) run.
-[  PASSED  ] 10 test(s).
-Internal tests failed rc=DER_UNKNOWN(1): 'Unknown error code 1'
+[  PASSED  ] 11 test(s).
