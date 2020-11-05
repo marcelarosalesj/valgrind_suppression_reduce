@@ -56,6 +56,7 @@ Note that we care more about fixing leaks on the VOS API than in VOS test cases,
 
 The Valgrind XML results of following commands are in `ut_memcheck_results`, and the logs are in `ut_logs`.
 
+### EVT
 * 1 - evt drain without pmem
 ```
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/1-evt-drain-leaks.xml" \
@@ -91,7 +92,7 @@ Results: 9 Leak_StillReachable, 1 Leak_DefinitelyLost
 ```
 [memcheck xmls](ut_memcheck_results/3-evt-sequence-leaks.xml) and [test logs](ut_logs/3-evt-sequence-leaks.log)
 
-* 4 btree ukey -s 20000 
+### Btree
 btree testing uses `src/common/test/btree.sh` script. Running `valgrind` on it will end up finding bash leaks. As the `btree.sh` script runs btree with many variations, it is not suitable to generate the commands by hand. Instead, I applied these changes to its code to get the leaks I want to work on.
 
 ```
@@ -112,61 +113,60 @@ index 6a4f022..6dd375e 100755
      VCMD="valgrind --tool=pmemcheck"
  fi
 ```
-And then, run the script as this
-```
-USE_VALGRIND=memcheck ./src/common/tests/btree.sh ukey -s 20000
-```
-It is going to be difficult to analyze case by case, so I am going to check all the results from this execition (24) and see what issues I find.
 
-Note that `utils/btree.supp` has suppressions that are from other libraries.
- 
+It is going to be difficult to analyze case by case, so I am going to check all the results from each execution and see what memory issues valgrind reports.
+
+In `utils/btree.supp` I will put the suppressions for leaks from other libraries. For example this one:
+
+```
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:sysfs_init
+   fun:_dl_init
+   obj:/usr/lib64/ld-2.17.so
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+}
+
+``` 
+Note that btree unit testing was run using (more less) [run-ut-btree.sh](run-ut-btree.sh) script.
+
+After using this approach, only the btree direct ones presented memory issues.
+
+* 4 btree ukey -s 20000 
+* 6 btree -s 20000
+* 7 btree perf -s 20000
+* 9 btree perf ukey -s 20000
+* 10 btree dyn ukey -s 20000
+* 11 btree dyn -s 20000
+* 12 btree dyn perf -s 20000
+* 13 btree dyn perf ukey -s 20000
+```
+Result: 0 leaks
+```
+
 * 5 btree direct -s 20000
 ```
 USE_VALGRIND=memcheck ./src/common/tests/btree.sh direct -s 20000
-```
-
-* 6 btree -s 20000
-```
-USE_VALGRIND=memcheck ./src/common/tests/btree.sh -s 20000
-```
-
-
-* 7 btree perf -s 20000
-```
-USE_VALGRIND=memcheck ./src/common/tests/btree.sh perf -s 20000
+Results: possibly lost, definitely lost and still reachable errors.
 ```
 
 * 8 btree perf direct -s 20000
 ```
 USE_VALGRIND=memcheck ./src/common/tests/btree.sh perf direct -s 20000
+Results: possibly lost, definitely lost
 ```
 
-* 9 btree perf ukey -s 20000
-```
-USE_VALGRIND=memcheck ./src/common/tests/btree.sh perf ukey -s 20000
-```
-
-* 10 btree dyn ukey -s 20000
-```
-USE_VALGRIND=memcheck ./src/common/tests/btree.sh dyn ukey -s 20000
-```
-
-* 11 btree dyn -s 20000
-```
-USE_VALGRIND=memcheck ./src/common/tests/btree.sh dyn -s 20000
-```
-
-* 12 btree dyn perf -s 20000
-```
-USE_VALGRIND=memcheck ./src/common/tests/btree.sh dyn perf -s 20000
-```
-
-* 13 btree dyn perf ukey -s 20000
-```
-USE_VALGRIND=memcheck ./src/common/tests/btree.sh dyn perf ukey -s 20000
-```
-
-Note that btree unit testing was run using [run-ut-btree.sh](run-ut-btree.sh) script.
+### VOS
 
 * 14 vos_tests -A 500
 ```
