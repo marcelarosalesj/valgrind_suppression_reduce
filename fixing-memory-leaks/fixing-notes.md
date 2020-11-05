@@ -92,98 +92,78 @@ Results: 9 Leak_StillReachable, 1 Leak_DefinitelyLost
 [memcheck xmls](ut_memcheck_results/3-evt-sequence-leaks.xml) and [test logs](ut_logs/3-evt-sequence-leaks.log)
 
 * 4 btree ukey -s 20000 
-```
-LNAME="4-btree-ukey-20000";
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
-	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./src/common/test/btree.sh ukey -s 20000 &> ${LNAME}.log
-Results: 6674 Leak_StillReachable
-```
+btree testing uses `src/common/test/btree.sh` script. Running `valgrind` on it will end up finding bash leaks. As the `btree.sh` script runs btree with many variations, it is not suitable to generate the commands by hand. Instead, I applied these changes to its code to get the leaks I want to work on.
 
+```
+diff --git a/src/common/tests/btree.sh b/src/common/tests/btree.sh
+index 6a4f022..6dd375e 100755
+--- a/src/common/tests/btree.sh
++++ b/src/common/tests/btree.sh
+@@ -7,8 +7,9 @@ BTR=${SL_BUILD_DIR}/src/common/tests/btree
+ VCMD=()
+ if [ "$USE_VALGRIND" = "memcheck" ]; then
+     VCMD="valgrind --leak-check=full --show-reachable=yes --error-limit=no \
+-          --suppressions=${VALGRIND_SUPP} --xml=yes \
+-          --xml-file=test_results/unit-test-%p.memcheck.xml"
++         --xml=yes --xml-file=test_results/4-btree-%p.xml \
++         --suppressions=utils/btree.supp ""
++#        --gen-suppressions=all
+ elif [ "$USE_VALGRIND" = "pmemcheck" ]; then
+     VCMD="valgrind --tool=pmemcheck"
+ fi
+```
+And then, run the script as this
+```
+USE_VALGRIND=memcheck ./src/common/tests/btree.sh ukey -s 20000
+```
+It is going to be difficult to analyze case by case, so I am going to check all the results from this execition (24) and see what issues I find.
+
+Note that `utils/btree.supp` has suppressions that are from other libraries.
+ 
 * 5 btree direct -s 20000
 ```
-LNAME="5-btree-direct-20000";
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
-	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./src/common/test/btree.sh direct -s 20000 &> ${LNAME}.log
-Results: 6683 Leak_StillReachable
+USE_VALGRIND=memcheck ./src/common/tests/btree.sh direct -s 20000
 ```
 
 * 6 btree -s 20000
 ```
-LNAME="6-btree-20000";
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
-	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./src/common/test/btree.sh -s 20000 &> ${LNAME}.log
-Results: 6666 Leak_StillReachable
+USE_VALGRIND=memcheck ./src/common/tests/btree.sh -s 20000
 ```
 
 
 * 7 btree perf -s 20000
 ```
-LNAME="7-btree-perf-20000";
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
-	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./src/common/test/btree.sh perf -s 20000 &> ${LNAME}.log
-Results: 6716 Leak_StillReachable
+USE_VALGRIND=memcheck ./src/common/tests/btree.sh perf -s 20000
 ```
 
 * 8 btree perf direct -s 20000
 ```
-LNAME="8-btree-perf-direct-20000";
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
-	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./src/common/test/btree.sh perf direct -s 20000 &> ${LNAME}.log
-Results: 6738 Leak_StillReachable
+USE_VALGRIND=memcheck ./src/common/tests/btree.sh perf direct -s 20000
 ```
 
 * 9 btree perf ukey -s 20000
 ```
-LNAME="9-btree-perf-ukey-20000";
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
-	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./src/common/test/btree.sh perf ukey -s 20000 &> ${LNAME}.log
-Results: 6711 Leak_StillReachable
+USE_VALGRIND=memcheck ./src/common/tests/btree.sh perf ukey -s 20000
 ```
 
 * 10 btree dyn ukey -s 20000
 ```
-LNAME="10-btree-dyn-ukey-20000";
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
-	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./src/common/test/btree.sh dyn ukey -s 20000 &> ${LNAME}.log
-
-Results: 6723 Leak_StillReachable
+USE_VALGRIND=memcheck ./src/common/tests/btree.sh dyn ukey -s 20000
 ```
 
 * 11 btree dyn -s 20000
 ```
-LNAME="11-btree-dyn-20000";
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
-	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./src/common/test/btree.sh dyn -s 20000 &> ${LNAME}.log
-
-Results: 6712 Leak_StillReachable
+USE_VALGRIND=memcheck ./src/common/tests/btree.sh dyn -s 20000
 ```
 
 * 12 btree dyn perf -s 20000
 ```
-LNAME="12-btree-dyn-perf-20000";
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
-	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./src/common/test/btree.sh dyn perf -s 20000 &> ${LNAME}.log
-
-Results: 6769 Leak_StillReachable
+USE_VALGRIND=memcheck ./src/common/tests/btree.sh dyn perf -s 20000
 ```
 
 * 13 btree dyn perf ukey -s 20000
 ```
-LNAME="13-btree-dyn-perf-ukey-20000";
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
-	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./src/common/test/btree.sh dyn perf ukey -s 20000 &> ${LNAME}.log
-
-Results: 6758 Leak_StillReachable
+USE_VALGRIND=memcheck ./src/common/tests/btree.sh dyn perf ukey -s 20000
 ```
 
 Note that btree unit testing was run using [run-ut-btree.sh](run-ut-btree.sh) script.
