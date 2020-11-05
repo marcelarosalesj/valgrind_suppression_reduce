@@ -15,3 +15,18 @@ for f in *.xml; do n=$(grep "<error>" $f | wc -l ); echo "$f $n"; done | sort -k
 # show kind of leak and the functions under it
 grep -E "<fn>|<kind>" unit-test-25770.memcheck.xml
 
+# same, but for many xmls
+for i in $(ls *.xml); do
+	echo ">>> $i"
+	grep -E "<fn>|<kind>" $i
+done
+
+# print how many leaks there are per file 
+
+for i in $(ls *.xml); do
+	echo ">>> $i"
+	var=$(grep "<kind>" $i | wc -l)
+	echo "count total: $var"
+	var2=$(grep "Leak_StillReachable" $i | wc -l)
+	echo "Results: $var2 Leak_StillReachable"
+done

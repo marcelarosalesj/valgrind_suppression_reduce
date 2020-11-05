@@ -1,0 +1,247 @@
++ set -e
++ for IPL in '"i,"' '""'
++ for IDIR in '"f"' '"b"'
++ for PMEM in '"-m"' '""'
++ run_test
++ printf '\nOptions: IPL='\''%s'\'' IDIR='\''%s'\'' PMEM='\''%s'\''\n' i, f -m
+
+Options: IPL='i,' IDIR='f' PMEM='-m'
+++ gen_test_conf_string i, -m
+++ name=
+++ '[' -n i, ']'
+++ name=' inplace'
+++ '[' -n -m ']'
+++ name=' inplace pmem'
+++ echo ' inplace pmem'
++ test_conf=' inplace pmem'
++ '[' -z on ']'
++ echo 'B+tree performance test...'
+B+tree performance test...
++ eval /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test 'btree performance  perf ukey keys=20000  inplace pmem' '' -m -C +i,o:3 -p 20000 -D
+++ /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test btree performance perf ukey keys=20000 inplace pmem -m -C +i,o:3 -p 20000 -D
+11/05-05:36:59.67 wolf-26 DAOS[58174/58174] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+Using vmem
+[==========] Running 1 test(s).
+[ RUN      ] btree
+Create btree with order 3 inplace feats 1
+Btree performance test, order=3, keys=20000
+insert =  462533.94/sec
+lookup =  612409.97/sec
+delete =  545316.78/sec
+Destroy btree
+[       OK ] btree
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).
++ for PMEM in '"-m"' '""'
++ run_test
++ printf '\nOptions: IPL='\''%s'\'' IDIR='\''%s'\'' PMEM='\''%s'\''\n' i, f ''
+
+Options: IPL='i,' IDIR='f' PMEM=''
+++ gen_test_conf_string i, ''
+++ name=
+++ '[' -n i, ']'
+++ name=' inplace'
+++ '[' -n '' ']'
+++ echo ' inplace'
++ test_conf=' inplace'
++ '[' -z on ']'
++ echo 'B+tree performance test...'
+B+tree performance test...
++ eval /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test 'btree performance  perf ukey keys=20000  inplace' '' '' -C +i,o:3 -p 20000 -D
+++ /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test btree performance perf ukey keys=20000 inplace -C +i,o:3 -p 20000 -D
+11/05-05:37:00.36 wolf-26 DAOS[58176/58176] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+Using vmem
+[==========] Running 1 test(s).
+[ RUN      ] btree
+Create btree with order 3 inplace feats 1
+Btree performance test, order=3, keys=20000
+insert =  464200.19/sec
+lookup =  611040.47/sec
+delete =  544647.61/sec
+Destroy btree
+[       OK ] btree
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).
++ for IDIR in '"f"' '"b"'
++ for PMEM in '"-m"' '""'
++ run_test
++ printf '\nOptions: IPL='\''%s'\'' IDIR='\''%s'\'' PMEM='\''%s'\''\n' i, b -m
+
+Options: IPL='i,' IDIR='b' PMEM='-m'
+++ gen_test_conf_string i, -m
+++ name=
+++ '[' -n i, ']'
+++ name=' inplace'
+++ '[' -n -m ']'
+++ name=' inplace pmem'
+++ echo ' inplace pmem'
++ test_conf=' inplace pmem'
++ '[' -z on ']'
++ echo 'B+tree performance test...'
+B+tree performance test...
++ eval /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test 'btree performance  perf ukey keys=20000  inplace pmem' '' -m -C +i,o:3 -p 20000 -D
+++ /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test btree performance perf ukey keys=20000 inplace pmem -m -C +i,o:3 -p 20000 -D
+11/05-05:37:01.04 wolf-26 DAOS[58178/58178] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+Using vmem
+[==========] Running 1 test(s).
+[ RUN      ] btree
+Create btree with order 3 inplace feats 1
+Btree performance test, order=3, keys=20000
+insert =  463564.01/sec
+lookup =  611004.87/sec
+delete =  543789.66/sec
+Destroy btree
+[       OK ] btree
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).
++ for PMEM in '"-m"' '""'
++ run_test
++ printf '\nOptions: IPL='\''%s'\'' IDIR='\''%s'\'' PMEM='\''%s'\''\n' i, b ''
+
+Options: IPL='i,' IDIR='b' PMEM=''
+++ gen_test_conf_string i, ''
+++ name=
+++ '[' -n i, ']'
+++ name=' inplace'
+++ '[' -n '' ']'
+++ echo ' inplace'
++ test_conf=' inplace'
++ '[' -z on ']'
++ echo 'B+tree performance test...'
+B+tree performance test...
++ eval /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test 'btree performance  perf ukey keys=20000  inplace' '' '' -C +i,o:3 -p 20000 -D
+++ /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test btree performance perf ukey keys=20000 inplace -C +i,o:3 -p 20000 -D
+11/05-05:37:01.72 wolf-26 DAOS[58180/58180] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+Using vmem
+[==========] Running 1 test(s).
+[ RUN      ] btree
+Create btree with order 3 inplace feats 1
+Btree performance test, order=3, keys=20000
+insert =  464133.41/sec
+lookup =  611116.15/sec
+delete =  544605.18/sec
+Destroy btree
+[       OK ] btree
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).
++ for IPL in '"i,"' '""'
++ for IDIR in '"f"' '"b"'
++ for PMEM in '"-m"' '""'
++ run_test
++ printf '\nOptions: IPL='\''%s'\'' IDIR='\''%s'\'' PMEM='\''%s'\''\n' '' f -m
+
+Options: IPL='' IDIR='f' PMEM='-m'
+++ gen_test_conf_string '' -m
+++ name=
+++ '[' -n '' ']'
+++ '[' -n -m ']'
+++ name=' pmem'
+++ echo ' pmem'
++ test_conf=' pmem'
++ '[' -z on ']'
++ echo 'B+tree performance test...'
+B+tree performance test...
++ eval /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test 'btree performance  perf ukey keys=20000  pmem' '' -m -C +o:3 -p 20000 -D
+++ /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test btree performance perf ukey keys=20000 pmem -m -C +o:3 -p 20000 -D
+11/05-05:37:02.40 wolf-26 DAOS[58182/58182] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+Using vmem
+[==========] Running 1 test(s).
+[ RUN      ] btree
+Create btree with order 3 feats 1
+Btree performance test, order=3, keys=20000
+insert =  462704.87/sec
+lookup =  611637.48/sec
+delete =  544188.29/sec
+Destroy btree
+[       OK ] btree
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).
++ for PMEM in '"-m"' '""'
++ run_test
++ printf '\nOptions: IPL='\''%s'\'' IDIR='\''%s'\'' PMEM='\''%s'\''\n' '' f ''
+
+Options: IPL='' IDIR='f' PMEM=''
+++ gen_test_conf_string '' ''
+++ name=
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ echo ''
++ test_conf=
++ '[' -z on ']'
++ echo 'B+tree performance test...'
+B+tree performance test...
++ eval /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test 'btree performance  perf ukey keys=20000 ' '' '' -C +o:3 -p 20000 -D
+++ /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test btree performance perf ukey keys=20000 -C +o:3 -p 20000 -D
+11/05-05:37:03.07 wolf-26 DAOS[58185/58185] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+Using vmem
+[==========] Running 1 test(s).
+[ RUN      ] btree
+Create btree with order 3 feats 1
+Btree performance test, order=3, keys=20000
+insert =  464889.63/sec
+lookup =  611076.08/sec
+delete =  545373.50/sec
+Destroy btree
+[       OK ] btree
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).
++ for IDIR in '"f"' '"b"'
++ for PMEM in '"-m"' '""'
++ run_test
++ printf '\nOptions: IPL='\''%s'\'' IDIR='\''%s'\'' PMEM='\''%s'\''\n' '' b -m
+
+Options: IPL='' IDIR='b' PMEM='-m'
+++ gen_test_conf_string '' -m
+++ name=
+++ '[' -n '' ']'
+++ '[' -n -m ']'
+++ name=' pmem'
+++ echo ' pmem'
++ test_conf=' pmem'
++ '[' -z on ']'
++ echo 'B+tree performance test...'
+B+tree performance test...
++ eval /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test 'btree performance  perf ukey keys=20000  pmem' '' -m -C +o:3 -p 20000 -D
+++ /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test btree performance perf ukey keys=20000 pmem -m -C +o:3 -p 20000 -D
+11/05-05:37:03.75 wolf-26 DAOS[58187/58187] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+Using vmem
+[==========] Running 1 test(s).
+[ RUN      ] btree
+Create btree with order 3 feats 1
+Btree performance test, order=3, keys=20000
+insert =  447786.48/sec
+lookup =  610666.82/sec
+delete =  539984.68/sec
+Destroy btree
+[       OK ] btree
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).
++ for PMEM in '"-m"' '""'
++ run_test
++ printf '\nOptions: IPL='\''%s'\'' IDIR='\''%s'\'' PMEM='\''%s'\''\n' '' b ''
+
+Options: IPL='' IDIR='b' PMEM=''
+++ gen_test_conf_string '' ''
+++ name=
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ echo ''
++ test_conf=
++ '[' -z on ']'
++ echo 'B+tree performance test...'
+B+tree performance test...
++ eval /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test 'btree performance  perf ukey keys=20000 ' '' '' -C +o:3 -p 20000 -D
+++ /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree --start-test btree performance perf ukey keys=20000 -C +o:3 -p 20000 -D
+11/05-05:37:04.43 wolf-26 DAOS[58189/58189] fi   INFO src/gurt/fault_inject.c:481 d_fault_inject_init() No config file, fault injection is OFF.
+Using vmem
+[==========] Running 1 test(s).
+[ RUN      ] btree
+Create btree with order 3 feats 1
+Btree performance test, order=3, keys=20000
+insert =  460267.65/sec
+lookup =  611976.60/sec
+delete =  545153.76/sec
+Destroy btree
+[       OK ] btree
+[==========] 1 test(s) run.
+[  PASSED  ] 1 test(s).
