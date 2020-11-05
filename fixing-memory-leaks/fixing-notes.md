@@ -12,14 +12,23 @@ Note that we want to solve not only leaks, but various kinds of Valgrind issues.
 
 VOS UT involves `btree.sh`, `evt_ctl.sh` and `vos_tests`. They run the following testing:
 
-* btree
-    * Pending
-* vos_tests
-    * Pending
 * evt
     * Drain
     * Internal
     * Sequence
+* btree
+    * ukey -s 20000
+    * direct -s 20000
+    * -s 20000
+    * perf -s 20000
+    * perf direct -s 20000
+    * perf ukey -s 20000
+    * dyn ukey -s 20000
+    * dyn -s 20000
+    * dyn perf -s 20000
+    * dyn perf ukey -s 20000
+* vos_tests
+    * Pending
 
 
 ## Strategy
@@ -86,8 +95,8 @@ LNAME="4-btree-ukey-20000";
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
 	    ./src/common/test/btree.sh ukey -s 20000 &> ${LNAME}.log
-```
 Results: 6674 Leak_StillReachable
+```
 
 * 5 btree direct -s 20000
 ```
@@ -95,8 +104,8 @@ LNAME="5-btree-direct-20000";
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
 	    ./src/common/test/btree.sh direct -s 20000 &> ${LNAME}.log
-```
 Results: 6683 Leak_StillReachable
+```
 
 * 6 btree -s 20000
 ```
@@ -104,9 +113,8 @@ LNAME="6-btree-20000";
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
 	    ./src/common/test/btree.sh -s 20000 &> ${LNAME}.log
-
-```
 Results: 6666 Leak_StillReachable
+```
 
 
 * 7 btree perf -s 20000
@@ -115,9 +123,8 @@ LNAME="7-btree-perf-20000";
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
 	    ./src/common/test/btree.sh perf -s 20000 &> ${LNAME}.log
-
-```
 Results: 6716 Leak_StillReachable
+```
 
 * 8 btree perf direct -s 20000
 ```
@@ -125,9 +132,8 @@ LNAME="8-btree-perf-direct-20000";
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
 	    ./src/common/test/btree.sh perf direct -s 20000 &> ${LNAME}.log
-
-```
 Results: 6738 Leak_StillReachable
+```
 
 * 9 btree perf ukey -s 20000
 ```
@@ -135,9 +141,8 @@ LNAME="9-btree-perf-ukey-20000";
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
 	    ./src/common/test/btree.sh perf ukey -s 20000 &> ${LNAME}.log
-
-```
 Results: 6711 Leak_StillReachable
+```
 
 * 10 btree dyn ukey -s 20000
 ```
@@ -146,8 +151,8 @@ valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
 	    ./src/common/test/btree.sh dyn ukey -s 20000 &> ${LNAME}.log
 
-```
 Results: 6723 Leak_StillReachable
+```
 
 * 11 btree dyn -s 20000
 ```
@@ -156,8 +161,8 @@ valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
 	    ./src/common/test/btree.sh dyn -s 20000 &> ${LNAME}.log
 
-```
 Results: 6712 Leak_StillReachable
+```
 
 * 12 btree dyn perf -s 20000
 ```
@@ -166,8 +171,8 @@ valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
 	    ./src/common/test/btree.sh dyn perf -s 20000 &> ${LNAME}.log
 
-```
 Results: 6769 Leak_StillReachable
+```
 
 * 13 btree dyn perf ukey -s 20000
 ```
@@ -176,7 +181,7 @@ valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
 	    ./src/common/test/btree.sh dyn perf ukey -s 20000 &> ${LNAME}.log
 
-```
 Results: 6758 Leak_StillReachable
+```
 
 Note that btree unit testing was run using [run-ut-btree.sh](run-ut-btree.sh) script.
