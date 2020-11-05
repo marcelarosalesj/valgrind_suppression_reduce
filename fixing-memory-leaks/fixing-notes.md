@@ -28,8 +28,10 @@ VOS UT involves `btree.sh`, `evt_ctl.sh` and `vos_tests`. They run the following
     * dyn perf -s 20000
     * dyn perf ukey -s 20000
 * vos_tests
-    * Pending
-
+    * vos_tests -A 500
+    * vos_tests -n -A 500
+    * vos_tests -A 50 with DAOS_IO_BYPASS=pm
+    * vos_tests -A 50 with DAOS_IO_BYPASS=pm_snap
 
 ## Strategy
 
@@ -185,3 +187,47 @@ Results: 6758 Leak_StillReachable
 ```
 
 Note that btree unit testing was run using [run-ut-btree.sh](run-ut-btree.sh) script.
+
+* 14 vos_tests -A 500
+```
+LNAME="14-vos-500";
+valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
+	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
+	    ./install/bin/vos_tests -A 500 &> ${LNAME}.log
+
+Results:
+```
+
+* 15 vos_tests -n -A 500
+```
+LNAME="15-vos-n-500";
+valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
+	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
+	    ./install/bin/vos_tests -n -A 500 &> ${LNAME}.log
+
+Results:
+```
+
+* 16 vos_tests -A 50 with DAOS_IO_BYPASS=pm
+```
+export DAOS_IO_BYPASS=pm
+LNAME="16-vos-50-pm";
+valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
+	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
+	    ./install/bin/vos_tests -A 50 &> ${LNAME}.log
+unset DAOS_IO_BYPASS
+
+Results:
+```
+
+* 17 vos_tests -A 50 with DAOS_IO_BYPASS=pm_snap
+```
+export DAOS_IO_BYPASS=pm_snap
+LNAME="17-vos-50-pm-snap";
+valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
+	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
+	    ./install/bin/vos_tests -A 50 &> ${LNAME}.log
+unset DAOS_IO_BYPASS
+
+Results:
+```
