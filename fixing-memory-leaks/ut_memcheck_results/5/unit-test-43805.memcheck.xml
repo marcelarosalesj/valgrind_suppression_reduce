@@ -12,8 +12,8 @@
   <line>Command: /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct --start-test btree functional direct keys=20000 pmem iterate=b -m -C o:3 -c -o -u 7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody -i b -q -f 3,6,5,7,2,1,4 -d 3,6,5,7,2,1,4 -u 7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody -f 3,6,5,7,2,1,4 -r 3,6,5,7,2,1,4 -q -u 7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody -q -i b:3 -D</line>
 </preamble>
 
-<pid>6863</pid>
-<ppid>6553</ppid>
+<pid>43805</pid>
+<ppid>43770</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -22,9 +22,9 @@
     <arg>--leak-check=full</arg>
     <arg>--show-reachable=yes</arg>
     <arg>--error-limit=no</arg>
-    <arg>--xml=yes</arg>
-    <arg>--xml-file=test_results/4-btree-%p.xml</arg>
     <arg>--suppressions=utils/btree.supp</arg>
+    <arg>--xml=yes</arg>
+    <arg>--xml-file=test_results/unit-test-%p.memcheck.xml</arg>
   </vargv>
   <argv>
     <exe>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</exe>
@@ -67,13 +67,13 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.107 </time>
+  <time>00:00:00:00.108 </time>
 </status>
 
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.870 </time>
+  <time>00:00:00:00.874 </time>
 </status>
 
 <errorcounts>

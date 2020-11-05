@@ -9,11 +9,11 @@
   <line>Memcheck, a memory error detector</line>
   <line>Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.</line>
   <line>Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info</line>
-  <line>Command: /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct --start-test btree functional direct keys=20000 inplace pmem iterate=f -m -C i,o:3 -c -o -u 7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody -i f -q -f 3,6,5,7,2,1,4 -d 3,6,5,7,2,1,4 -u 7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody -f 3,6,5,7,2,1,4 -r 3,6,5,7,2,1,4 -q -u 7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody -q -i f:3 -D</line>
+  <line>Command: /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct --start-test btree functional direct keys=20000 iterate=b -C o:3 -c -o -u 7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody -i b -q -f 3,6,5,7,2,1,4 -d 3,6,5,7,2,1,4 -u 7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody -f 3,6,5,7,2,1,4 -r 3,6,5,7,2,1,4 -q -u 7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody -q -i b:3 -D</line>
 </preamble>
 
-<pid>6557</pid>
-<ppid>6553</ppid>
+<pid>43809</pid>
+<ppid>43770</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -22,9 +22,9 @@
     <arg>--leak-check=full</arg>
     <arg>--show-reachable=yes</arg>
     <arg>--error-limit=no</arg>
-    <arg>--xml=yes</arg>
-    <arg>--xml-file=test_results/4-btree-%p.xml</arg>
     <arg>--suppressions=utils/btree.supp</arg>
+    <arg>--xml=yes</arg>
+    <arg>--xml-file=test_results/unit-test-%p.memcheck.xml</arg>
   </vargv>
   <argv>
     <exe>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</exe>
@@ -33,18 +33,15 @@
     <arg>functional</arg>
     <arg>direct</arg>
     <arg>keys=20000</arg>
-    <arg>inplace</arg>
-    <arg>pmem</arg>
-    <arg>iterate=f</arg>
-    <arg>-m</arg>
+    <arg>iterate=b</arg>
     <arg>-C</arg>
-    <arg>i,o:3</arg>
+    <arg>o:3</arg>
     <arg>-c</arg>
     <arg>-o</arg>
     <arg>-u</arg>
     <arg>7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody</arg>
     <arg>-i</arg>
-    <arg>f</arg>
+    <arg>b</arg>
     <arg>-q</arg>
     <arg>-f</arg>
     <arg>3,6,5,7,2,1,4</arg>
@@ -61,20 +58,20 @@
     <arg>7:loaded,3:that,5:dice,2:knows,4:the,6:are,1:Everybody</arg>
     <arg>-q</arg>
     <arg>-i</arg>
-    <arg>f:3</arg>
+    <arg>b:3</arg>
     <arg>-D</arg>
   </argv>
 </args>
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.108 </time>
+  <time>00:00:00:00.107 </time>
 </status>
 
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.877 </time>
+  <time>00:00:00:00.870 </time>
 </status>
 
 <errorcounts>

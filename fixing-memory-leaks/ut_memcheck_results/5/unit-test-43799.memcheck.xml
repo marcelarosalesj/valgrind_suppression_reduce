@@ -12,8 +12,8 @@
   <line>Command: /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct --start-test btree drain direct keys=20000 pmem -m -C o:3 -e -D</line>
 </preamble>
 
-<pid>6855</pid>
-<ppid>6553</ppid>
+<pid>43799</pid>
+<ppid>43770</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -22,9 +22,9 @@
     <arg>--leak-check=full</arg>
     <arg>--show-reachable=yes</arg>
     <arg>--error-limit=no</arg>
-    <arg>--xml=yes</arg>
-    <arg>--xml-file=test_results/4-btree-%p.xml</arg>
     <arg>--suppressions=utils/btree.supp</arg>
+    <arg>--xml=yes</arg>
+    <arg>--xml-file=test_results/unit-test-%p.memcheck.xml</arg>
   </vargv>
   <argv>
     <exe>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</exe>
@@ -44,13 +44,13 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.108 </time>
+  <time>00:00:00:00.107 </time>
 </status>
 
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.805 </time>
+  <time>00:00:00:00.801 </time>
 </status>
 
 <errorcounts>

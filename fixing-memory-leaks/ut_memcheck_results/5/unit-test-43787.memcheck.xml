@@ -9,11 +9,11 @@
   <line>Memcheck, a memory error detector</line>
   <line>Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.</line>
   <line>Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info</line>
-  <line>Command: /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct --start-test btree batch operations direct keys=20000 inplace -C i,o:3 -c -o -b 20000 -D</line>
+  <line>Command: /home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct --start-test btree batch operations direct keys=20000 inplace pmem -m -C i,o:3 -c -o -b 20000 -D</line>
 </preamble>
 
-<pid>6840</pid>
-<ppid>6553</ppid>
+<pid>43787</pid>
+<ppid>43770</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -22,9 +22,9 @@
     <arg>--leak-check=full</arg>
     <arg>--show-reachable=yes</arg>
     <arg>--error-limit=no</arg>
-    <arg>--xml=yes</arg>
-    <arg>--xml-file=test_results/4-btree-%p.xml</arg>
     <arg>--suppressions=utils/btree.supp</arg>
+    <arg>--xml=yes</arg>
+    <arg>--xml-file=test_results/unit-test-%p.memcheck.xml</arg>
   </vargv>
   <argv>
     <exe>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</exe>
@@ -35,6 +35,8 @@
     <arg>direct</arg>
     <arg>keys=20000</arg>
     <arg>inplace</arg>
+    <arg>pmem</arg>
+    <arg>-m</arg>
     <arg>-C</arg>
     <arg>i,o:3</arg>
     <arg>-c</arg>
@@ -47,13 +49,13 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.108 </time>
+  <time>00:00:00:00.107 </time>
 </status>
 
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:09.339 </time>
+  <time>00:00:00:09.331 </time>
 </status>
 
 <error>
@@ -61,9 +63,9 @@
   <tid>1</tid>
   <kind>Leak_PossiblyLost</kind>
   <xwhat>
-    <text>64 bytes in 1 blocks are possibly lost in loss record 2 of 5</text>
-    <leakedbytes>64</leakedbytes>
-    <leakedblocks>1</leakedblocks>
+    <text>353 bytes in 3 blocks are possibly lost in loss record 2 of 5</text>
+    <leakedbytes>353</leakedbytes>
+    <leakedblocks>3</leakedblocks>
   </xwhat>
   <stack>
     <frame>
@@ -75,12 +77,12 @@
       <line>762</line>
     </frame>
     <frame>
-      <ip>0x404317</ip>
+      <ip>0x4040DA</ip>
       <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
       <fn>sk_btr_gen_keys</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>776</line>
+      <line>775</line>
     </frame>
     <frame>
       <ip>0x404E43</ip>
@@ -88,7 +90,7 @@
       <fn>sk_btr_batch_oper</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>919</line>
+      <line>920</line>
     </frame>
     <frame>
       <ip>0x405A35</ip>
@@ -96,7 +98,7 @@
       <fn>ts_group</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>1112</line>
+      <line>1113</line>
     </frame>
     <frame>
       <ip>0x5532DA1</ip>
@@ -113,7 +115,7 @@
       <fn>run_cmd_line_test</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>1138</line>
+      <line>1139</line>
     </frame>
     <frame>
       <ip>0x406106</ip>
@@ -121,7 +123,7 @@
       <fn>main</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>1209</line>
+      <line>1210</line>
     </frame>
   </stack>
 </error>
@@ -131,79 +133,9 @@
   <tid>1</tid>
   <kind>Leak_PossiblyLost</kind>
   <xwhat>
-    <text>510 bytes in 5 blocks are possibly lost in loss record 3 of 5</text>
-    <leakedbytes>510</leakedbytes>
-    <leakedblocks>5</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4C2BFB9</ip>
-      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>calloc</fn>
-      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>762</line>
-    </frame>
-    <frame>
-      <ip>0x4040DA</ip>
-      <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
-      <fn>sk_btr_gen_keys</fn>
-      <dir>/home/marosale/Repos/daos/src/common/tests</dir>
-      <file>btree_direct.c</file>
-      <line>774</line>
-    </frame>
-    <frame>
-      <ip>0x404E43</ip>
-      <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
-      <fn>sk_btr_batch_oper</fn>
-      <dir>/home/marosale/Repos/daos/src/common/tests</dir>
-      <file>btree_direct.c</file>
-      <line>919</line>
-    </frame>
-    <frame>
-      <ip>0x405A35</ip>
-      <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
-      <fn>ts_group</fn>
-      <dir>/home/marosale/Repos/daos/src/common/tests</dir>
-      <file>btree_direct.c</file>
-      <line>1112</line>
-    </frame>
-    <frame>
-      <ip>0x5532DA1</ip>
-      <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
-    </frame>
-    <frame>
-      <ip>0x55337A4</ip>
-      <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
-      <fn>_cmocka_run_group_tests</fn>
-    </frame>
-    <frame>
-      <ip>0x402F6B</ip>
-      <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
-      <fn>run_cmd_line_test</fn>
-      <dir>/home/marosale/Repos/daos/src/common/tests</dir>
-      <file>btree_direct.c</file>
-      <line>1138</line>
-    </frame>
-    <frame>
-      <ip>0x406106</ip>
-      <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
-      <fn>main</fn>
-      <dir>/home/marosale/Repos/daos/src/common/tests</dir>
-      <file>btree_direct.c</file>
-      <line>1209</line>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x3</unique>
-  <tid>1</tid>
-  <kind>Leak_DefinitelyLost</kind>
-  <xwhat>
-    <text>1,348,007 bytes in 19,999 blocks are definitely lost in loss record 4 of 5</text>
-    <leakedbytes>1348007</leakedbytes>
-    <leakedblocks>19999</leakedblocks>
+    <text>389 bytes in 4 blocks are possibly lost in loss record 3 of 5</text>
+    <leakedbytes>389</leakedbytes>
+    <leakedblocks>4</leakedblocks>
   </xwhat>
   <stack>
     <frame>
@@ -220,7 +152,7 @@
       <fn>sk_btr_gen_keys</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>776</line>
+      <line>777</line>
     </frame>
     <frame>
       <ip>0x404E43</ip>
@@ -228,7 +160,7 @@
       <fn>sk_btr_batch_oper</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>919</line>
+      <line>920</line>
     </frame>
     <frame>
       <ip>0x405A35</ip>
@@ -236,7 +168,7 @@
       <fn>ts_group</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>1112</line>
+      <line>1113</line>
     </frame>
     <frame>
       <ip>0x5532DA1</ip>
@@ -253,7 +185,7 @@
       <fn>run_cmd_line_test</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>1138</line>
+      <line>1139</line>
     </frame>
     <frame>
       <ip>0x406106</ip>
@@ -261,7 +193,77 @@
       <fn>main</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>1209</line>
+      <line>1210</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x3</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>1,351,215 bytes in 19,996 blocks are definitely lost in loss record 4 of 5</text>
+    <leakedbytes>1351215</leakedbytes>
+    <leakedblocks>19996</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2BFB9</ip>
+      <obj>/opt/pmemcheck/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+      <dir>/home/marosale/Repos/valgrind/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>762</line>
+    </frame>
+    <frame>
+      <ip>0x404317</ip>
+      <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
+      <fn>sk_btr_gen_keys</fn>
+      <dir>/home/marosale/Repos/daos/src/common/tests</dir>
+      <file>btree_direct.c</file>
+      <line>777</line>
+    </frame>
+    <frame>
+      <ip>0x404E43</ip>
+      <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
+      <fn>sk_btr_batch_oper</fn>
+      <dir>/home/marosale/Repos/daos/src/common/tests</dir>
+      <file>btree_direct.c</file>
+      <line>920</line>
+    </frame>
+    <frame>
+      <ip>0x405A35</ip>
+      <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
+      <fn>ts_group</fn>
+      <dir>/home/marosale/Repos/daos/src/common/tests</dir>
+      <file>btree_direct.c</file>
+      <line>1113</line>
+    </frame>
+    <frame>
+      <ip>0x5532DA1</ip>
+      <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
+    </frame>
+    <frame>
+      <ip>0x55337A4</ip>
+      <obj>/usr/lib64/libcmocka.so.0.7.0</obj>
+      <fn>_cmocka_run_group_tests</fn>
+    </frame>
+    <frame>
+      <ip>0x402F6B</ip>
+      <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
+      <fn>run_cmd_line_test</fn>
+      <dir>/home/marosale/Repos/daos/src/common/tests</dir>
+      <file>btree_direct.c</file>
+      <line>1139</line>
+    </frame>
+    <frame>
+      <ip>0x406106</ip>
+      <obj>/home/marosale/Repos/daos/build/debug/gcc/src/common/tests/btree_direct</obj>
+      <fn>main</fn>
+      <dir>/home/marosale/Repos/daos/src/common/tests</dir>
+      <file>btree_direct.c</file>
+      <line>1210</line>
     </frame>
   </stack>
 </error>
@@ -271,9 +273,9 @@
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>1,907,561 bytes in 19,995 blocks are definitely lost in loss record 5 of 5</text>
-    <leakedbytes>1907561</leakedbytes>
-    <leakedblocks>19995</leakedblocks>
+    <text>1,911,251 bytes in 19,997 blocks are definitely lost in loss record 5 of 5</text>
+    <leakedbytes>1911251</leakedbytes>
+    <leakedblocks>19997</leakedblocks>
   </xwhat>
   <stack>
     <frame>
@@ -290,7 +292,7 @@
       <fn>sk_btr_gen_keys</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>774</line>
+      <line>775</line>
     </frame>
     <frame>
       <ip>0x404E43</ip>
@@ -298,7 +300,7 @@
       <fn>sk_btr_batch_oper</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>919</line>
+      <line>920</line>
     </frame>
     <frame>
       <ip>0x405A35</ip>
@@ -306,7 +308,7 @@
       <fn>ts_group</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>1112</line>
+      <line>1113</line>
     </frame>
     <frame>
       <ip>0x5532DA1</ip>
@@ -323,7 +325,7 @@
       <fn>run_cmd_line_test</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>1138</line>
+      <line>1139</line>
     </frame>
     <frame>
       <ip>0x406106</ip>
@@ -331,7 +333,7 @@
       <fn>main</fn>
       <dir>/home/marosale/Repos/daos/src/common/tests</dir>
       <file>btree_direct.c</file>
-      <line>1209</line>
+      <line>1210</line>
     </frame>
   </stack>
 </error>
