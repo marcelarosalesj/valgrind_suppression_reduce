@@ -166,6 +166,9 @@ USE_VALGRIND=memcheck ./src/common/tests/btree.sh perf direct -s 20000
 Results: possibly lost, definitely lost
 ```
 
+It seems that these Btree related memory issues were related to a missing free for key and value buffers in kv (btree_direct.c)
+- [DAOS-5995 PR](https://github.com/daos-stack/daos/pull/3810)
+
 ### VOS
 
 * 14 vos_tests -A 500
