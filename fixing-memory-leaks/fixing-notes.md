@@ -171,45 +171,45 @@ It seems that these Btree related memory issues were related to a missing free f
 
 ### VOS
 
-* 14 vos_tests -A 500
+* 14 vos_tests -A 5 
 ```
-LNAME="14-vos-500";
+LNAME="14-vos-5";
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./install/bin/vos_tests -A 500 &> ${LNAME}.log
+	    ./install/bin/vos_tests -A 5 &> ${LNAME}.log
 
 Results:
 ```
 
-* 15 vos_tests -n -A 500
+* 15 vos_tests -n -A 5
 ```
-LNAME="15-vos-n-500";
+LNAME="15-vos-n-5";
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./install/bin/vos_tests -n -A 500 &> ${LNAME}.log
+	    ./install/bin/vos_tests -n -A 5 &> ${LNAME}.log
 
 Results:
 ```
 
-* 16 vos_tests -A 50 with DAOS_IO_BYPASS=pm
+* 16 vos_tests -A 5 with DAOS_IO_BYPASS=pm
 ```
 export DAOS_IO_BYPASS=pm
-LNAME="16-vos-50-pm";
+LNAME="16-vos-5-pm";
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./install/bin/vos_tests -A 50 &> ${LNAME}.log
+	    ./install/bin/vos_tests -A 5 &> ${LNAME}.log
 unset DAOS_IO_BYPASS
 
 Results:
 ```
 
-* 17 vos_tests -A 50 with DAOS_IO_BYPASS=pm_snap
+* 17 vos_tests -A 5 with DAOS_IO_BYPASS=pm_snap
 ```
 export DAOS_IO_BYPASS=pm_snap
-LNAME="17-vos-50-pm-snap";
+LNAME="17-vos-5-pm-snap";
 valgrind --leak-check=full --show-reachable=yes --error-limit=no --xml=yes --xml-file="test_results/${LNAME}.xml" \
 	    --num-callers=24 --keep-debuginfo=yes --track-origins=yes \
-	    ./install/bin/vos_tests -A 50 &> ${LNAME}.log
+	    ./install/bin/vos_tests -A 5 &> ${LNAME}.log
 unset DAOS_IO_BYPASS
 
 Results:

@@ -12,6 +12,7 @@ def main():
     sf = supp.SuppressionFile(input_file)
 
     print("SF len is ", len(sf))
+    #import ipdb; ipdb.set_trace()
 
     sf.save("tmp.log")
 
